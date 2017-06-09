@@ -1,0 +1,112 @@
+.float-left{
+			float: left;
+		}
+		.float-right{
+			float: right;
+			text-align: right;
+		}
+		.navbar-default {
+		  background-color: #148be8;
+		  border-color: #f2eded;
+		}
+		.navbar-default .navbar-brand {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-brand:hover,
+		.navbar-default .navbar-brand:focus {
+		  color: #090909;
+		}
+		.navbar-default .navbar-text {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-nav > li > a {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-nav > li > a:hover,
+		.navbar-default .navbar-nav > li > a:focus {
+		  color: #090909;
+		}
+		.navbar-default .navbar-nav > .active > a,
+		.navbar-default .navbar-nav > .active > a:hover,
+		.navbar-default .navbar-nav > .active > a:focus {
+		  color: #090909;
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-nav > .open > a,
+		.navbar-default .navbar-nav > .open > a:hover,
+		.navbar-default .navbar-nav > .open > a:focus {
+		  color: #090909;
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle {
+		  border-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle:hover,
+		.navbar-default .navbar-toggle:focus {
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle .icon-bar {
+		  background-color: #eaeff0;
+		}
+		.navbar-default .navbar-collapse,
+		.navbar-default .navbar-form {
+		  border-color: #eaeff0;
+		}
+		.navbar-default .navbar-link {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-link:hover {
+		  color: #090909;
+		}
+
+		@media (max-width: 767px) {
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		    color: #eaeff0;
+		  }
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		    color: #090909;
+		  }
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		    color: #090909;
+		    background-color: #f2eded;
+		  }
+		}
+		.ml-70{
+			margin-left: 70px;
+		}
+		.text-center{
+			text-align: center;
+		}
+		.a-btn{
+			text-decoration: none !important;
+			color: white !important;
+		}
+		fieldset {
+		  overflow: hidden
+		}
+
+		.some-class {
+		  float: left;
+		  clear: none;
+		}
+
+		label {
+		  float: left;
+		  clear: none;
+		  display: block;
+		  padding: 2px 1em 0 0;
+		}
+
+		input[type=radio],
+		input.radio {
+		  float: left;
+		  clear: none;
+		  margin: 2px 0 0 2px;
+		}
+		.center-btn{
+			margin-left: auto;
+			margin-right: auto;
+		}
