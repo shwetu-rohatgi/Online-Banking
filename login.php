@@ -7,7 +7,7 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
-	
+		<script src="banking.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -37,6 +37,10 @@
 						<div class="form-group">
 						  <label for="password">Password:</label>
 						  <input type="password" class="form-control" id="password" required>
+						</div>
+						<div class="form-group">
+						  <label for="rcode">Random Code:</label>
+						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" required disabled>
 						</div>
 						<label for="usr">Select your Security Image: </label>
 						<br>

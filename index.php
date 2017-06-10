@@ -7,7 +7,7 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
-	
+		<script src="banking.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -40,11 +40,17 @@
 						</div>
 						<div class="form-group">
 						  <label for="rcode">Random Code:</label>
-						  <input type="text" class="form-control" id="rcode" maxlength="6" required>
+						  <input type="text" class="form-control" name="rcode" id="rcode" maxlength="6" required>
 						</div>
+						<div class="checkbox">
+					      <label><input type="checkbox" id="checkme">I have Verified the presence of padlock symbol and HTTPS in the URL</label>
+					    </div>
+					    <br>
+					    <br>
+					    <br>
 						<h5 class="text-center"><a href="register.php">New User? Register Here</a></h5>
 						<br>
-						<button type="submit" class="btn btn-primary ml-70"><a href="login.php" class="a-btn">Submit</a></button>
+						<button type="submit" class="btn btn-primary ml-70" id="submitbtn" disabled><a href="login.php" class="a-btn">Submit</a></button>
 						<button type="submit" class="btn btn-primary ml-70">Reset</button>
 					
 					</form>
