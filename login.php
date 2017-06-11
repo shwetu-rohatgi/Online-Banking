@@ -33,14 +33,18 @@
 			<br>
 			<div class="col-md-12">
 				<div class="col-md-4">
-					<form>
+					<form method="post" action="">
+
+						Welcome <?php if(!empty($_POST['usrname'])) echo $_POST['usrname'] ; ?>
+						<br>
+						<br>
 						<div class="form-group">
 						  <label for="password">Password:</label>
 						  <input type="password" class="form-control" id="password" required>
 						</div>
 						<div class="form-group">
 						  <label for="rcode">Random Code:</label>
-						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" required disabled>
+						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" value="<?php if(!empty($_POST['rcode'])) echo $_POST['rcode'];?>" required disabled>
 						</div>
 						<label for="usr">Select your Security Image: </label>
 						<br>

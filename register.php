@@ -36,7 +36,7 @@
 					<form>
 						<div class="form-group">
 						  <label for="name">Customer's Name:</label>
-						  <input type="text" class="form-control" id="name" required>
+						  <input type="text" class="form-control" name="name "id="name" required>
 						  <label for="optradio">Gender:</label>
 						  <br>
 							<div class="radio">
@@ -49,13 +49,14 @@
 							<label for="dob">DOB:</label>
 						  	<input type="date" class="form-control" id="dob" required>
 						  	<label for="minval">Minimum Amount:</label>
-						  	<input type="text" class="form-control" id="minval" value = 1000 min = 1000 required>
+						  	<input type="range" class="form-control" id="minval" value="1000" min="1000" max="1000000" step="500" onchange="updateTextInput(this.value);" required>
+						  	<input type="text" name="minval" id="textInput" value="" disabled><br>
 						  	<label for="mobile">Mobile:</label>
 						  	<input type="text" class="form-control" id="mobile" required>
 						  	<label for="email">Email:</label>
-						  	<input type="email" class="form-control" id="email" required>
+						  	<input type="email" class="form-control" name="email" id="email" required>
 							<label for="password">Password:</label>
-						  	<input type="password" class="form-control" id="password" required>
+						  	<input type="password" class="form-control" name="pass" id="password" required>
 							</div>
 						<br>
 						<button type="submit" class="btn btn-primary text-center"><a href="index.php" class="a-btn">Register</a></button>

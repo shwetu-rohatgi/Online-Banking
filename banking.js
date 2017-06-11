@@ -13,3 +13,7 @@ $(document).ready(function() {
     	$('input[name="rcode_display"]').val($(this).val());
     });
 });
+
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }

@@ -33,10 +33,10 @@
 			<br>
 			<div class="col-md-12">
 				<div class="col-md-4">
-					<form>
+					<form action="login.php" method="post">
 						<div class="form-group">
 						  <label for="usrname">Username:</label>
-						  <input type="text" class="form-control" id="usrname" required>
+						  <input type="text" class="form-control" name="usrname" id="usrname" required>
 						</div>
 						<div class="form-group">
 						  <label for="rcode">Random Code:</label>
@@ -50,7 +50,7 @@
 					    <br>
 						<h5 class="text-center"><a href="register.php">New User? Register Here</a></h5>
 						<br>
-						<button type="submit" class="btn btn-primary ml-70" id="submitbtn" disabled><a href="login.php" class="a-btn">Submit</a></button>
+						<button type="submit" class="btn btn-primary ml-70" id="submitbtn" disabled><a class="a-btn">Submit</a></button>
 						<button type="submit" class="btn btn-primary ml-70">Reset</button>
 					
 					</form>
@@ -63,10 +63,6 @@
 
 
 		</div>
-		<!-- <h1>Hello HTML</h1>
-		<?php
-			echo "<h4>Hello php !</h4>";
-		?> -->
 
 	</body>
 <html>
