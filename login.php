@@ -1,3 +1,52 @@
+<?php
+ ob_start();
+ session_start();
+ require_once 'dbconnect.php';
+ ini_set('display_errors',1); 
+ error_reporting(E_ALL); 
+ // it will never let you open index(login) page if session is set
+ if ( isset($_SESSION['user'])!="" ) {
+  header("Location: home.php");
+  exit;
+ }
+
+ $error = false;
+
+ if( isset($_POST['btn-login1']) ) {
+  $pass = trim($_POST['pass']);
+  $pass = strip_tags($pass);
+  $pass = htmlspecialchars($pass);
+
+ if(empty($pass)){
+   $error = true;
+   $passError = "Please enter your password.";
+   echo $passError;
+  }
+  
+  // if there's no error, continue to login
+  if (!$error) {
+   
+   $password = hash('sha256', $pass); // password hashing using SHA256
+  
+   $res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userPass='$password'");
+   $row=mysql_fetch_array($res);
+   $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
+   
+   if( $count == 1 && $row['userPass']==$password ) {
+    $_SESSION['user'] = $row['userId'];
+    header("Location: home.php");
+   } else {
+    $errMSG = "Incorrect Password, Try again...";
+	echo $errMSG;
+   }
+    
+  }
+  
+ }
+ $_POST = $_SESSION;
+ ?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>IITR Bank</title>
@@ -7,7 +56,6 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
-		<script src="banking.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -35,27 +83,27 @@
 				<div class="col-md-4">
 					<form method="post" action="">
 
-						Welcome <?php if(!empty($_POST['usrname'])) echo $_POST['usrname'] ; ?>
+						Welcome <!-- <p id="welcome"> </p> --><?php if(!empty($_POST['email'])) echo $_POST['email']; ?>
 						<br>
 						<br>
 						<div class="form-group">
 						  <label for="password">Password:</label>
-						  <input type="password" class="form-control" id="password" required>
+						  <input type="password" class="form-control" name="pass" id="password">
 						</div>
 						<div class="form-group">
 						  <label for="rcode">Random Code:</label>
-						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" value="<?php if(!empty($_POST['rcode'])) echo $_POST['rcode'];?>" required disabled>
+						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" required disabled>
 						</div>
 						<label for="usr">Select your Security Image: </label>
 						<br>
 						<br>
 						<br>
-						<h5 class="text-center"><a>Forgot Password? Click here!</a></h5>
+						<h5 class="text-center"><a href="forgot-password.php">Forgot Password? Click here!</a></h5>
 						<br>
 						<div class= "center-btn">
-						<button type="submit" class="btn btn-primary a-btn">Login</button>
+						<button type="submit" class="btn btn-primary" name="btn-login1"><a class="a-btn">Login</a></button>
 						</div>
-						<!-- <button type="submit" class="btn btn-primary ml-70">Refresh</button> -->
+						
 					
 					</form>
 
@@ -67,10 +115,8 @@
 
 
 		</div>
-		<!-- <h1>Hello HTML</h1>
-		<?php
-			echo "<h4>Hello php !</h4>";
-		?> -->
-
+		<script src="banking.js"></script>
 	</body>
+
 <html>
+	

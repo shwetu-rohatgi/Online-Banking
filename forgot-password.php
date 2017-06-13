@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>IITR Bank</title>
@@ -7,7 +8,6 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
-	
 	</head>
 	<body>
 		<div class="container">
@@ -23,7 +23,7 @@
 			      <a class="navbar-brand" href="#">Home</a>
 			    </div>
 			    <ul class="nav navbar-nav">
-			      <li class="active"><a href="#">Login</a></li>
+			      <li class="active"><a href="#">Forgot Password</a></li>
 			      <li><a href="#">Products</a></li>
 			      <li><a href="#">Services</a></li>
 			      <li><a href="#">Contact</a></li>
@@ -33,31 +33,31 @@
 			<br>
 			<div class="col-md-12">
 				<div class="col-md-4">
-					<form>
+					<form action="" method="post" id="forgotform">
 						<div class="form-group">
-						  <label for="usr">Password:</label>
-						  <input type="password" class="form-control" id="password">
+						  <label for="usrname">Enter you Email Address:</label>
+						  <input type="email" class="form-control" name="forgot-email" id="forgot-email" required>
 						</div>
-						<h2>Select your Security Image: </h2>
-						<h5 class="text-center"><a>Forgot Password? Click here!</a></h5>
+					    <br>
+					    <center><button type="submit" class="btn btn-primary" id="forgotbtn" name="forgotpwd">Send</button></center>
 						<br>
-						<button type="submit" class="btn btn-primary">Login</button>
-						<!-- <button type="submit" class="btn btn-primary ml-70">Refresh</button> -->
+						<h4 class="text-center" id="sent-text">Please check your mail account to set new password !</h4>
 					
 					</form>
 
 				</div>
 				<div class="col-md-8">
-					
+					<img src="banking.jpg" width = "100%"; >
 				</div>
 			</div>
 
 
 		</div>
-		<!-- <h1>Hello HTML</h1>
-		<?php
-			echo "<h4>Hello php !</h4>";
-		?> -->
-
+		<script src="banking.js"></script>
+		<script type="text/javascript">
+		    $("#forgotform").submit(function(e) {
+			    e.preventDefault();
+			});
+		</script>
 	</body>
 <html>

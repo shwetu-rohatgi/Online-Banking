@@ -8,7 +8,7 @@
   header("Location: home.php");
   exit;
  }
-
+ 
  $error = false;
  
  if( isset($_POST['btn-login']) ) { 
@@ -32,7 +32,7 @@ if (!$error) {
    $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
    
    if( $count == 1 && $row['userEmail']==$Email) {
-	  $_SESSION = $_POST; 
+	   
 	  session_write_close();
 	  $_SESSION['user'] = $row['userId'];
 	  header("Location: login.php");
@@ -47,7 +47,6 @@ if (!$error) {
  }
  ?>
 
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>IITR Bank</title>
@@ -57,6 +56,7 @@ if (!$error) {
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
+		<script src="banking.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -112,7 +112,7 @@ if (!$error) {
 
 
 		</div>
-		<script src="banking.js"></script>
+
 	</body>
 <html>
 	

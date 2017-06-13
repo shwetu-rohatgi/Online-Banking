@@ -1,7 +1,6 @@
 <?php
  ob_start();
  session_start();
- 
  if( isset($_SESSION['user'])!="" ){
   header("Location: home.php");
  }
@@ -68,9 +67,9 @@
    echo $passError;
   }
  $phoneNumber = $_POST['mobile'];
- 
+ echo $phoneNumber;
 
-if(!empty($phoneNumber)) // phone number is not empty
+/*if(!empty($phoneNumber)) // phone number is not empty
 {
     if(preg_match('/^\d{10}$/',$phoneNumber)) // phone number is valid
     {
@@ -90,21 +89,11 @@ else // phone number is empty
 {
 	$error = true;
   echo 'You must provide a phone number !';
-}
+}*/
 $date = $_POST['dob'];
 $min_amt = $_POST['minval'];
-
- // password validation
-  if (empty($min_amt)){
-   $error = true;
-   $amtError = "Please enter Minimum Value";
-   echo $amtError;
-  } else if(($min_amt) < 1000) {
-   $error = true;
-   $amtError = "Minimum amount should be 1000";
-   echo $amtError;
-  }
-
+echo $date;
+echo $min_amt;
   
   // password encrypt using SHA256();
   $password = hash('sha256', $pass);
@@ -112,7 +101,7 @@ $min_amt = $_POST['minval'];
   // if there's no error, continue to signup
   if( !$error ) {
    
-   $query = "INSERT INTO users(userName,Gender,DOB,Balance,mobile,userEmail,userPass) VALUES('$name','$gen','$date','$min_amt','$fphone','$email','$password')";
+   $query = "INSERT INTO users(userName,Gender,DOB,Balance,mobile,userEmail,userPass) VALUES('$name','$gen',STR_TO_DATE('$date', '%m/%d/%Y'),'$min_amt','$fphone','$email','$password')";
    $res = mysql_query($query);
     
    if ($res) {
@@ -176,16 +165,17 @@ $min_amt = $_POST['minval'];
 						  <label for="optradio">Gender:</label>
 						  <br>
 							<div class="radio">
-							<label><input type="radio" name="optradio" checked id="radio1" value="M">M</label>
+							<label><input type="radio" name="optradio" checked>M</label>
 							</div>
 							<div class="radio">
-							<label><input type="radio" name="optradio" id="radio2" value="F">F</label>
+							<label><input type="radio" name="optradio">F</label>
 							</div>
 							<br><br>
 							<label for="dob">DOB:</label>
 						  	<input type="date" class="form-control" id="dob" name="dob" required>
 						  	<label for="minval">Minimum Amount:</label>
-						  	<input type="text" class="form-control" name="minval" id="textInput" value="1000" required><br>
+						  	<input type="range" class="form-control" id="minval" value="1000" min="1000" max="1000000" step="500" onchange="updateTextInput(this.value);" required>
+						  	<input type="text" name="minval" id="textInput" value="" disabled><br>
 						  	<label for="mobile">Mobile:</label>
 						  	<input type="text" class="form-control" id="mobile" name="mobile" required>
 						  	<label for="email">Email:</label>
@@ -200,7 +190,7 @@ $min_amt = $_POST['minval'];
 					</form>
 
 				</div>
-				<div class="col-md-8 d3 mt0">
+				<!-- <div class="col-md-8 d3 mt0">
 					<h3 class="text-center pb20 mt0">Select Upto 4 Random Images</h3>
 					<div class="d3-2">
 				        <div class="d4">
@@ -298,7 +288,7 @@ $min_amt = $_POST['minval'];
 				          </div>
 				        </div>
 				    </div>
-				</div>
+				</div> -->
 			</div>
 
 
