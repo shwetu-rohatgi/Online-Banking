@@ -83,7 +83,7 @@
 				<div class="col-md-4">
 					<form method="post" action="">
 
-						Welcome <!-- <p id="welcome"> </p> --><?php if(!empty($_POST['email'])) echo $_POST['email']; ?>
+						Welcome <?php if(!empty($_POST['email'])) echo $_POST['email']; ?> ,
 						<br>
 						<br>
 						<div class="form-group">
@@ -92,7 +92,7 @@
 						</div>
 						<div class="form-group">
 						  <label for="rcode">Random Code:</label>
-						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" maxlength="6" required disabled>
+						  <input type="text" class="form-control" name="rcode_display" id="rcode_display" value="<?php if(!empty($_POST['email'])) echo $_POST['rcode']; ?>" maxlength="6" required disabled>
 						</div>
 						<label for="usr">Select your Security Image: </label>
 						<br>
