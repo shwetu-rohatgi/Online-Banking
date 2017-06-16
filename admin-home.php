@@ -1,3 +1,12 @@
+<?php
+ob_start();
+session_start();
+
+echo "Hello";
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,7 +43,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <span class="glyphicon glyphicon-user"></span>&nbsp;<strong> Hey! Admin&nbsp;<span class="caret"></span></strong></a>
                     <ul class="dropdown-menu">
-                      <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+                      <li><a href="admin.php?"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
                     </ul>
                   </li>
 
@@ -55,3 +64,4 @@
 		</div>
 	</body>
 </html>
+<?php ob_end_flush(); ?>

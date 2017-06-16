@@ -1,27 +1,11 @@
 <?php
- ob_start();
- session_start();
- include_once 'dbconnect.php';
+ob_start();
+session_start();
 
-if ( isset($_POST['cust-submit1']) ) {
-	$c_no1 = ($_POST['cust-acc-no']);
-	$c_no2 = ($_POST['cust-first-pwd']);
-	$query=mysql_query("SELECT * FROM tmp WHERE Acc_no='$c_no1'");
-	$row = mysql_fetch_array($query);
-	if($row['Acc_no']==$c_no1 && $row['tmp_pwd']==$c_no2)
-	{
-	header("Location: signup2.php");
-	}
-	else
-		echo "Invalid Credentials";
+echo "Hello";
 
-}
-else
-{
-	echo "";
-}
+
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -53,22 +37,26 @@ else
 			      <li><a href="#">Services</a></li>
 			      <li><a href="#">Contact</a></li>
 			    </ul>
+			    <ul class="nav navbar-nav navbar-right">
+              
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;<strong> Hey! Admin&nbsp;<span class="caret"></span></strong></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="admin.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
+                    </ul>
+                  </li>
+
+              </ul>
 			  </div>
 			</nav>
 			<div class="col-md-4">
-				<h3 class="text-center">Customer Panel</h3>
-				<br>
-				<form method="post" action="">
-				  <div class="form-group">
-				    <label for="cust-acc-no">Enter your Account Number</label>
-				    <input type="text" class="form-control" name="cust-acc-no" id="cust-acc-no">
-				  </div>
-				  <div class="form-group">
-				    <label for="cust-first-pwd">Enter Bank generated Password:</label>
-				    <input type="password" class="form-control" name="cust-first-pwd" id="cust-first-pwd">
-				  </div>
-				  <button type="submit" class="btn btn-default btn-primary" name="cust-submit1"><a class="a-btn">Submit</button>
-				</form>
+				<h3 class="text-center">Admin Dashboard</h3>
+				<center>
+					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="addcustomer.php" class="a-btn">Add New Customer</a></button><br>
+					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="deletecustomer.php" class="a-btn">Delete Customer</a></button>
+				</center>
+				
 			</div>
 			<div class="col-md-8">
 				<img src="banking.jpg" width = "100%"; >
@@ -76,3 +64,4 @@ else
 		</div>
 	</body>
 </html>
+<?php ob_end_flush(); ?>

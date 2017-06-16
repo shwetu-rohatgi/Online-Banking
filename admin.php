@@ -1,3 +1,28 @@
+<?php
+ob_start();
+session_start();
+
+$adminid = array("12345001","12345002","12345003","12345004");
+$adminpwd = array("abc123","def456","ghi789","xyz123");
+if( isset($_POST['admin-btn-login']) ) {
+
+    $flag = 0;
+	$admin_id = ($_POST['admin-id']);
+	$admin_pwd = ($_POST['admin-pwd']);
+	for($i=0;$i<4;$i++)
+	{
+    if( $adminid[$i] == $admin_id && $adminpwd[$i] == $admin_pwd){
+	   header("Location: admin-home.php");
+	   $flag = 1;
+	}
+	}
+	if($flag==0){
+		echo "Invalid credentials, Try again !";
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,16 +57,16 @@
 			</nav>
 			<div class="col-md-4">
 				<h3 class="text-center">Admin Panel</h3>
-				<form>
+				<form action="" method="post">
 				  <div class="form-group">
-				    <label for="admin-name">Username:</label>
-				    <input type="text" class="form-control" id="admin-name">
+				    <label for="admin-id">Admin ID:</label>
+				    <input type="text" class="form-control" name="admin-id" id="admin-id">
 				  </div>
 				  <div class="form-group">
 				    <label for="admin-pwd">Password:</label>
-				    <input type="password" class="form-control" id="admin-pwd">
+				    <input type="password" class="form-control" name= "admin-pwd" id="admin-pwd">
 				  </div>
-				  <button type="submit" class="btn btn-default btn-primary"><a class="a-btn" href="admin-home.php">Login</button>
+				  <button type="submit" class="btn btn-default btn-primary" name="admin-btn-login"><a class="a-btn">Login</a></button>
 				</form>
 			</div>
 			<div class="col-md-8">

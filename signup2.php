@@ -43,107 +43,109 @@
 					    <label for="cust-confirm-pwd">Confirm your New Password:</label>
 					    <input type="password" class="form-control" id="cust-confirm-pwd">
 					  </div>
-					  <button type="submit" class="btn btn-default btn-primary"><a class="a-btn" href="index.php">Submit</button>
+					  <label for="signup">Select your Security Image: </label>
+					  <br><br>
+					  <button type="submit" class="btn btn-default btn-primary" name="cust-submit2"><a class="a-btn" href="index.php">Submit</a></button>
 					</form>
 				</div>
 				<div class="col-md-8 d3 mt0">
-						<h3 class="text-center pb20 mt0">Select Upto 4 Random Images</h3>
-						<div class="d3-2">
-					        <div class="d4">
-					          <div class="d5">
-					          	<div class="col-md-12">
-						          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
+					<h3 class="text-center pb20 mt0">Select Upto 4 Random Images</h3>
+					<div class="d3-2">
+				        <div class="d4">
+				          <div class="d5">
+				          	<div class="col-md-12">
+					          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
 					          	</div>
-
-						        <div class="col-md-12 mt10">
-						          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
+					          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
 					          	</div>
-
-					          	<div class="col-md-12 mt10">
-						          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
+					          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
 					          	</div>
+				          	</div>
 
-					          	<div class="col-md-12 mt10">
-						          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
+					        <div class="col-md-12 mt10">
+					          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
 					          	</div>
-
-					          	<div class="col-md-12 mt10">
-						          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
-						          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
-						          		<div class="checkbox">
-									      <label><input type="checkbox" id="img1"></label>
-									    </div>
-						          	</div>
+					          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
 					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+				          	</div>
 
-					          </div>
-					        </div>
-					    </div>
+				          	<div class="col-md-12 mt10">
+					          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+				          	</div>
+
+				          	<div class="col-md-12 mt10">
+					          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/01.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+				          	</div>
+
+				          	<div class="col-md-12 mt10">
+					          	<div class="col-md-4"><img src="reg_images/02.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/03.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+					          	<div class="col-md-4"><img src="reg_images/04.jpg" class="reg-img">
+					          		<div class="checkbox">
+								      <label><input type="checkbox" id="img1"></label>
+								    </div>
+					          	</div>
+				          	</div>
+
+				          </div>
+				        </div>
+				    </div>
 				</div>
 			
 			</div>

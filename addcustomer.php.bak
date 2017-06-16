@@ -54,7 +54,16 @@
 	echo $emailError;
    }
   }
-
+ // password validation
+  /*if (empty($pass)){
+   $error = true;
+   $passError = "Please enter password.";
+   echo $passError;
+  } else if(strlen($pass) < 6) {
+   $error = true;
+   $passError = "Password must have atleast 6 characters.";
+   echo $passError;
+  }*/
  $phoneNumber = $_POST['mobile'];
  
 
@@ -64,6 +73,8 @@ if(!empty($phoneNumber)) // phone number is not empty
     {
       $phoneNumber = '0' . $phoneNumber;
 	  $fphone = $phoneNumber;
+
+      // your other code here
     }
     else
      // phone number is not valid
@@ -91,6 +102,10 @@ $min_amt = $_POST['minval'];
    echo $amtError;
   }
 
+  
+  // password encrypt using SHA256();
+ // $password = hash('sha256', $pass);
+  
   // if there's no error, continue to signup
   if( !$error ) {
    
@@ -98,8 +113,9 @@ $min_amt = $_POST['minval'];
    $res = mysql_query($query);
     
    if ($res) {
-    $errMSG = "<div class=\"bg-yellow\"><center><h4>Successfully registered!</h4></center></div>";
-	  echo $errMSG;
+    $errTyp = "<h1>success</h1>";
+    $errMSG = "<h2>Successfully registered!</h2>";
+	echo $errMSG;
 	$query=mysql_query("SELECT userId FROM users WHERE userEmail='$email'");
 	$row = mysql_fetch_array($query);
 	$uid = $row['userId'];
@@ -114,63 +130,61 @@ $min_amt = $_POST['minval'];
         $pass[] = $alphabet[$n];
     }
     return implode($pass); //turn the array into a string
-  }
+}
 
-    // function for formatted account no.
-  function accountno($uid){
-    $id = $uid-1;
-    if($id<10){
-    	$accno = "3284"."000000".$id;
-    }
-    else if($id<100){
-    	$accno = "3284"."00000".$id;
-    }
-    else if($id<1000){
-    	$accno = "3284"."0000".$id;
-    }
-    else if($id<10000){
-    	$accno = "3284"."000".$id;
-    }
-    else if($id<100000){
-    	$accno = "3284"."00".$id;
-    }
-    else if($id<1000000){
-    	$accno = "3284"."0".$id;
-    }
-    else if($id<10000000){
-    	$accno = "3284".$id;
-    }
-    else{
-    	echo "Account no. does not exist";
-    }
-    return $accno;
-  }
-    $finalacc_no = accountno($uid);
-    $temp_pwd = randomPassword();
-    $query1 = "UPDATE users SET Account_no='$finalacc_no' WHERE userEmail = '$email'";
-    mysql_query($query1);
-    $query2 = "INSERT INTO tmp(Acc_no,tmp_pwd) VALUES('$finalacc_no','$temp_pwd')";
+// function for formatted account no.
+function accountno($uid){
+$id = $uid-1;
+if($id<10){
+	$accno = "3284"."000000".$id;
+}
+else if($id<100){
+	$accno = "3284"."00000".$id;
+}
+else if($id<1000){
+	$accno = "3284"."0000".$id;
+}
+else if($id<10000){
+	$accno = "3284"."000".$id;
+}
+else if($id<100000){
+	$accno = "3284"."00".$id;
+}
+else if($id<1000000){
+	$accno = "3284"."0".$id;
+}
+else if($id<10000000){
+	$accno = "3284".$id;
+}
+else{
+	echo "Account no. does not exist";
+}
+return $accno;
+}
+	$finalacc_no = accountno($uid);
+	$temp_pwd = randomPassword();
+	$query1 = "UPDATE users SET Account_no='$finalacc_no' WHERE userEmail = '$email'";
+	mysql_query($query1);
+	$query2 = "INSERT INTO tmp(Acc_no,tmp_pwd) VALUES('$finalacc_no','$temp_pwd')";
     mysql_query($query2);
-    echo "<div class=\"bg-yellow\"><center><h4>Account No.: </h4>".$finalacc_no ." <br> <h4>First Time Password: </h4>" . $temp_pwd."</center></div>";
+	echo $finalacc_no ." & ". $temp_pwd;
+
+	echo "<script type='text/javascript'>alert(\"Account no :\" + $finalacc_no \"First time Password:\" + $temp_pwd )</script>";
 
     unset($name);
     unset($email);
-    	 
-      //unset($pass);
-    } else {
-        $errTyp = "<center><h4>danger</h4></center>";
-        $errMSG = "<center><h4>Something went wrong, try again later...</h4></center>";
-    	  echo $errTyp;
-    	  echo $errMSG;
-    }
-   
-  
+	 
+    //unset($pass);
+   } else {
+    $errTyp = "<h1>danger</h1>";
+    $errMSG = "<h1>Something went wrong, try again later...</h1>";
+	echo $errTyp;
+	echo $errMSG;
+   }
    
   }
 
-
-  
-  }
+}
   ?>
 <html>
 	<head>
@@ -207,7 +221,7 @@ $min_amt = $_POST['minval'];
 			<br>
 			<div class="col-md-12">
 				<div class="col-md-4">
-					<form action="" method="post" id="addcust_form">
+					<form action="" method="post">
 						<div class="form-group">
 						  <label for="name">Customer's Name:</label>
 						  <input type="text" class="form-control" name="name" id="name" required>
@@ -231,15 +245,12 @@ $min_amt = $_POST['minval'];
 							<!-- <label for="password">Password:</label>
 													  	<input type="password" class="form-control" name="pass" id="password" required> -->
 							</div>
-						<button type="submit" class="btn btn-primary text-center float-left" name="reg_btn" id="myBtn"><a class="a-btn">Register</a></button>
-            <button type="submit" class="btn btn-primary btn-danger text-center float-right" name="reg_btn"><a class="a-btn" href="admin-home.php">Back</a></button>
+						<br>
+						<button type="submit" class="btn btn-primary text-center" name="reg_btn"><a class="a-btn">Register</a></button>
 						<!-- <button type="submit" class="btn btn-primary ml-70">Refresh</button> -->
 					
-					<br>
-          <br>
+					</form>
 
-          </form>
-          
 				</div>
 				<div class="col-md-8">
 					<img src="banking.jpg" width = "100%"; >
@@ -249,6 +260,27 @@ $min_amt = $_POST['minval'];
 
 
 		</div>
+		<!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Registration Successful</h4>
+            </div>
+            <div class="modal-body">
+              <p>Account Number:<?php echo $finalacc_no ?>    </p>
+              <p>First Login Password: <?php echo $temp_pwd ?>   </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"><a href="admin-home.php">Home</a></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
 	</body>
 <html>
