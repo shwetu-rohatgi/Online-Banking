@@ -1,139 +1,4 @@
-<?php
- ob_start();
- session_start();
- 
- if( isset($_SESSION['user'])!="" ){
-  header("Location: home.php");
- }
- include_once 'dbconnect.php';
 
- $error = false;
-
- if ( isset($_POST['reg_btn']) ) {
-  
-  // clean user inputs to prevent sql injections
-  $name = trim($_POST['name']);
-  $name = strip_tags($name);
-  $name = htmlspecialchars($name);
-  
-  $email = trim($_POST['email']);
-  $email = strip_tags($email);
-  $email = htmlspecialchars($email);
-  
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
-
-  $gen = $_POST['optradio'];
-  
-  // basic name validation
-  if (empty($name)) {
-   $error = true;
-   $nameError = "Please enter your full name.";
-   echo $nameError;
-  } else if (strlen($name) < 3) {
-   $error = true;
-   $nameError = "Name must have atleat 3 characters.";
-   echo $nameError;
-  } else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
-   $error = true;
-   $nameError = "Name must contain alphabets and space.";
-   echo $nameError;
-  }
-  
-  //basic email validation
-  if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-   $error = true;
-   $emailError = "Please enter valid email address.";
-   echo $emailError;
-  } else {
-   // check email exist or not
-   $query = "SELECT userEmail FROM users WHERE userEmail='$email'";
-   $result = mysql_query($query);
-   $count = mysql_num_rows($result);
-   if($count!=0){
-    $error = true;
-    $emailError = "Provided Email is already in use.";
-	echo $emailError;
-   }
-  }
- // password validation
-  if (empty($pass)){
-   $error = true;
-   $passError = "Please enter password.";
-   echo $passError;
-  } else if(strlen($pass) < 6) {
-   $error = true;
-   $passError = "Password must have atleast 6 characters.";
-   echo $passError;
-  }
- $phoneNumber = $_POST['mobile'];
- 
-
-if(!empty($phoneNumber)) // phone number is not empty
-{
-    if(preg_match('/^\d{10}$/',$phoneNumber)) // phone number is valid
-    {
-      $phoneNumber = '0' . $phoneNumber;
-	  $fphone = $phoneNumber;
-
-      // your other code here
-    }
-    else
-     // phone number is not valid
-    {
-	 $error = true;
-      echo 'Phone number invalid !';
-    }
-}
-else // phone number is empty
-{
-	$error = true;
-  echo 'You must provide a phone number !';
-}
-$date = $_POST['dob'];
-$min_amt = $_POST['minval'];
-
- // password validation
-  if (empty($min_amt)){
-   $error = true;
-   $amtError = "Please enter Minimum Value";
-   echo $amtError;
-  } else if(($min_amt) < 1000) {
-   $error = true;
-   $amtError = "Minimum amount should be 1000";
-   echo $amtError;
-  }
-
-  
-  // password encrypt using SHA256();
-  $password = hash('sha256', $pass);
-  
-  // if there's no error, continue to signup
-  if( !$error ) {
-   
-   $query = "INSERT INTO users(userName,Gender,DOB,Balance,mobile,userEmail,userPass) VALUES('$name','$gen','$date','$min_amt','$fphone','$email','$password')";
-   $res = mysql_query($query);
-    
-   if ($res) {
-    $errTyp = "<h1>success</h1>";
-    $errMSG = "<h2>Successfully registered, you may login now</h2>";
-	echo $errTyp;
-	echo $errMSG;
-    unset($name);
-    unset($email);
-    unset($pass);
-   } else {
-    $errTyp = "<h1>danger</h1>";
-    $errMSG = "<h1>Something went wrong, try again later...</h1>";
-	echo $errTyp;
-	echo $errMSG;
-   } 
-   
-  }
-  
-  }
-  ?>
 <html>
 	<head>
 		<title>IITR Bank</title>
@@ -168,20 +33,15 @@ $min_amt = $_POST['minval'];
 			</nav>
 			<br>
 			<div class="col-md-12">
+				<form method="post" action="">
 				<div class="col-md-4">
 					<h3 class="text-center">Customer Panel</h3>
 					<br>
-					<form method="" action="post">
-					  <div class="form-group">
-					    <label for="cust-acc-pwd">Enter your New Password</label>
-					    <input type="text" class="form-control" id="cust-acc-pwd">
-					  </div>
-					  <div class="form-group">
-					    <label for="cust-confirm-pwd">Confirm your New Password:</label>
-					    <input type="password" class="form-control" id="cust-confirm-pwd">
-					  </div>
-					  <button type="submit" class="btn btn-default btn-primary"><a class="a-btn">Submit</a></button>
-					</form>
+					<!-- <form method="post" action=""> -->
+					  <label for="usr">Select your Security Image: </label>
+					  <br><br>
+					  <button type="submit" class="btn btn-default btn-primary" name="cust-submit2" id="cust-submit2"><a class="a-btn">Submit</a></button>
+					<!-- </form> -->
 				</div>
 				<div class="col-md-8 d3 mt0">
 					<h3 class="text-center pb20 mt0">Select Upto 4 Random Images</h3>
@@ -282,15 +142,11 @@ $min_amt = $_POST['minval'];
 				        </div>
 				    </div>
 				</div>
+				</form>
 			</div>
 
 
 		</div>
 
 	</body>
-<html>
-
-	
-
-
-
+</html>

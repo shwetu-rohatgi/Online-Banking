@@ -169,19 +169,36 @@ $min_amt = $_POST['minval'];
 			<br>
 			<div class="col-md-12">
 				<div class="col-md-4">
-					<h3 class="text-center">Customer Panel</h3>
-					<br>
-					<form method="" action="post">
-					  <div class="form-group">
-					    <label for="cust-acc-pwd">Enter your New Password</label>
-					    <input type="text" class="form-control" id="cust-acc-pwd">
-					  </div>
-					  <div class="form-group">
-					    <label for="cust-confirm-pwd">Confirm your New Password:</label>
-					    <input type="password" class="form-control" id="cust-confirm-pwd">
-					  </div>
-					  <button type="submit" class="btn btn-default btn-primary"><a class="a-btn">Submit</a></button>
+					<form action="" method="post">
+						<div class="form-group">
+						  <label for="name">Customer's Name:</label>
+						  <input type="text" class="form-control" name="name" id="name" required>
+						  <label for="optradio">Gender:</label>
+						  <br>
+							<div class="radio">
+							<label><input type="radio" name="optradio" checked id="radio1" value="M">M</label>
+							</div>
+							<div class="radio">
+							<label><input type="radio" name="optradio" id="radio2" value="F">F</label>
+							</div>
+							<br><br>
+							<label for="dob">DOB:</label>
+						  	<input type="date" class="form-control" id="dob" name="dob" required>
+						  	<label for="minval">Minimum Amount:</label>
+						  	<input type="text" class="form-control" name="minval" id="textInput" value="1000" required><br>
+						  	<label for="mobile">Mobile:</label>
+						  	<input type="text" class="form-control" id="mobile" name="mobile" required>
+						  	<label for="email">Email:</label>
+						  	<input type="email" class="form-control" name="email" id="email" required>
+							<label for="password">Password:</label>
+						  	<input type="password" class="form-control" name="pass" id="password" required>
+							</div>
+						<br>
+						<button type="submit" class="btn btn-primary text-center" name="reg_btn"><a class="a-btn">Register</a></button>
+						<!-- <button type="submit" class="btn btn-primary ml-70">Refresh</button> -->
+					
 					</form>
+
 				</div>
 				<div class="col-md-8 d3 mt0">
 					<h3 class="text-center pb20 mt0">Select Upto 4 Random Images</h3>
