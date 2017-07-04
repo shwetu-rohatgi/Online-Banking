@@ -12,7 +12,7 @@ echo $_SESSION['user'];
  }
 
   $pictures = array("01.jpg", "02.jpg", "03.jpg","04.jpg", "05.jpg", "06.jpg","07.jpg", "08.jpg", "09.jpg","10.jpg", "11.jpg", "12.jpg","13.jpg", "14.jpg", "15.jpg","16.jpg", "17.jpg", "18.jpg");
-  $pic_string = array_rand($pictures,15);
+  $pic_string = array_rand($pictures,12);
   shuffle($pic_string);
 
   if( isset($_POST['cust-submit-img']) ){
@@ -98,10 +98,10 @@ $_POST = $_SESSION;
                 <div class="d4">
                   <div class="d5">
                     <?php
-                      for($i=0;$i<15;$i++){
+                      for($i=0;$i<12;$i++){
                         echo '<span class="image-checkbox-container">';
                         echo '<input type="checkbox" class="image-checkbox" name="images_selected[]" value="'.$pictures[$pic_string[$i]].'" />'; 
-                        echo '<img src="reg_images/'.$pictures[$pic_string[$i]].'" id='.$pictures[$pic_string[$i]].' name='.$pictures[$pic_string[$i]].' height="230px" width="230px" />';
+                        echo '<img src="textplacement/reg_images/'.$pictures[$pic_string[$i]].'" id='.$pictures[$pic_string[$i]].' name='.$pictures[$pic_string[$i]].' height="230px" width="230px" />';
                         echo '</span>';
                       }
                     ?>

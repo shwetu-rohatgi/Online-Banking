@@ -152,6 +152,20 @@ $min_amt = $_POST['minval'];
     $query2 = "INSERT INTO tmp(Acc_no,tmp_pwd) VALUES('$finalacc_no','$temp_pwd')";
     mysql_query($query2);
     echo "<div class=\"bg-yellow\"><center><h4>Account No.: </h4>".$finalacc_no ." <br> <h4>First Time Password: </h4>" . $temp_pwd."</center></div>";
+	$query3 = "CREATE TABLE `".$finalacc_no."` (
+transactionid int(12) NOT NULL AUTO_INCREMENT,
+  transactiondate date DEFAULT NULL,
+  name varchar(255) DEFAULT NULL,
+  credit int(10) DEFAULT NULL,
+  debit int(10) DEFAULT NULL,
+  amount float(10,2) DEFAULT NULL,
+  narration varchar(255) NOT NULL,
+  PRIMARY KEY (transactionid)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1";
+mysql_query($query3);
+ $date=date("Y-m-d");
+ $query4 = "INSERT INTO `".$finalacc_no."`(transactiondate,name,credit,debit,amount,narration) VALUES('$date','$name','$min_amt','','$min_amt','cash deposit')";
+ mysql_query($query4);
 
     unset($name);
     unset($email);

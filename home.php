@@ -18,6 +18,31 @@
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
+  
+                $name= $userRow[2];
+                $account_no= $userRow[1];
+                $acc_status=$userRow[13];
+                
+                $gender=$userRow[3];
+                $mobile=$userRow[6];
+                $email=$userRow[7];
+                
+                $_SESSION['login_id']=$account_no;
+                $_SESSION['name']=$name;
+
+
+     $sql="SELECT MAX(transactionid) from `".$account_no."`";
+     $result=mysql_query($sql) or die(mysql_error());
+     $rws=  mysql_fetch_array($result);
+     $s_last_tid=$rws[0];
+
+     $sql="SELECT * from `".$account_no."` WHERE transactionid='$s_last_tid'";
+     $result=mysql_query($sql) or die(mysql_error());
+     while($rws= mysql_fetch_array($result)) {
+     $s_amount=$rws[5];
+	 }
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,11 +83,23 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
                 <a class="navbar-brand" href="#">Home</a>
               </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">User Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Transactions</a></li>
-                <li><a href="#">Settings</a></li>
+                <!-- <li class="active"><a href="#">User Account</a></li> -->
+                <li id='caption'><b><u>Dashboard</u></b></li>
+				<li><a href="customer_account_statement.php">Accounts Statement</a></li>
+
+                <!-- <li><a href="#">Transactions</a></li> -->
+                <!-- <li><a href="#">Settings</a></li> -->
               </ul>
+			  <ul class="nav navbar-nav">
+        <li id='caption'><b><u>Funds Transfer</u></b></li>
+        <li><a href="add_beneficiary.php">Add Beneficiary</a></li>
+                    <li><a href="display_beneficiary.php">View added Beneficiary</a></li>
+                    <li><a href="customer_transfer.php">Transfer Funds</a></li>
+                    </ul>
+ <ul class="nav navbar-nav">
+        <li id='caption'><b><u>Settings</u></b></li>
+        <li><a href="change_password_customer.php">Change Password</a></li>
+                    </ul>
               <ul class="nav navbar-nav navbar-right">
               
                   <li class="dropdown">
@@ -104,7 +141,7 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
                       </div>
                       <div class="form-group">
                         <label for="act-num">Account Number:</label>
-                        <input type="text" class="form-control" name="act-num" id="act-num" value="<?php if(!empty($_POST['email'])) echo '7301524012' . $userRow['userId']; ?>" disabled>
+                        <input type="text" class="form-control" name="act-num" id="act-num" value="<?php if(!empty($_POST['email'])) echo $userRow['Account_no']; ?>" disabled>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -114,7 +151,7 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
                       </div>
                       <div class="form-group">
                         <label for="act-bal">Account Balance:</label>
-                        <input type="text" class="form-control" name="act-bal" id="act-bal" value="<?php if(!empty($_POST['email'])) echo $userRow['Balance']; ?>" disabled>
+                        <input type="text" class="form-control" name="act-bal" id="act-bal" value="<?php if(!empty($_POST['email'])) echo $s_amount; ?>" disabled>
                       </div>
                     </div>
                   </div>
@@ -129,4 +166,4 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
     
   </body>
 </html>
-<?php ob_end_flush(); ?>
+<!-- <?php ob_end_flush(); ?> -->

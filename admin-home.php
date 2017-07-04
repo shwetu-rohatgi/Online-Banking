@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 
-echo "Hello";
 
 
 ?>
@@ -54,6 +53,7 @@ echo "Hello";
 				<h3 class="text-center">Admin Dashboard</h3>
 				<center>
 					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="addcustomer.php" class="a-btn">Add New Customer</a></button><br>
+					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="admin_beneficiary.php" class="a-btn">Approve Beneficiary</a></button><br>
 					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="deletecustomer.php" class="a-btn">Delete Customer</a></button>
 				</center>
 				
