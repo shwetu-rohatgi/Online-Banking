@@ -11,7 +11,7 @@ session_start();
         <meta charset="UTF-8">
         <title>Display Beneficiary</title>
         
-        <link rel="stylesheet" href="newcss.css">
+        <!-- <link rel="stylesheet" href="newcss.css"> -->
         <style>
             .content_customer table,th,td {
     padding:6px;
@@ -23,12 +23,12 @@ session_start();
         </style>
         </head>
        <?php include 'header.php' ?>
-<div class='content_customer'>
+
           <div class="text">Welcome <?php echo $_SESSION['email']?></div>  
-          <?php include 'customer_navbar.php'?>
-    <div class="customer_top_nav">
-             <!-- <div class="text">Welcome <?php echo $_SESSION['email']?></div> -->
-            </div>
+           <?php //include 'customer_navbar.php'?>
+              <!--<div class="customer_top_nav">
+             <div class="text">Welcome <?php echo $_SESSION['email']?></div>
+            </div>-->
     
             <?php
 include_once 'dbconnect.php';
@@ -36,8 +36,9 @@ $sender_id=$_SESSION["login_id"];
 $sql="SELECT * FROM beneficiary1 WHERE sender_id='$sender_id'";// in beneficiary1 table we have sender_id which is equivalent to sender Account_no of user table
 $result=  mysql_query($sql) or die(mysql_error());
 ?>
-     <br><br><br>
-        <h3 style="text-align:center;color:#2E4372;"><u>Added Beneficiary</u></h3>
+     <br>
+        <h3 style="text-align:center;color:#2E4372;">Added Beneficiary</h3>
+		<br>
     <form action="delete_beneficiary.php">
 <table align="center">
                         
@@ -59,7 +60,7 @@ $result=  mysql_query($sql) or die(mysql_error());
                             echo "</tr>";
                         } ?>
 </table>
-    <table align="center"><tr><td><input type="submit" name="submit_id" value="DELETE BENEFICIARY" class='addstaff_button'/></td></tr></table>
+<br>
+    <center><button type="submit" name="submit_id" value="DELETE BENEFICIARY" class='addstaff_button'/>DELETE BENEFICIARY</button></center>
     </form>
-</div>
         <?php include 'footer.php'?> 

@@ -1,0 +1,191 @@
+.float-left{
+			float: left;
+		}
+		.float-right{
+			float: right;
+			text-align: right;
+		}
+		.navbar-default {
+		  background-color: #148be8;
+		  border-color: #f2eded;
+		}
+		.navbar-default .navbar-brand {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-brand:hover,
+		.navbar-default .navbar-brand:focus {
+		  color: #090909;
+		}
+		.navbar-default .navbar-text {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-nav > li > a {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-nav > li > a:hover,
+		.navbar-default .navbar-nav > li > a:focus {
+		  color: #090909;
+		}
+		.navbar-default .navbar-nav > .active > a,
+		.navbar-default .navbar-nav > .active > a:hover,
+		.navbar-default .navbar-nav > .active > a:focus {
+		  color: #090909;
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-nav > .open > a,
+		.navbar-default .navbar-nav > .open > a:hover,
+		.navbar-default .navbar-nav > .open > a:focus {
+		  color: #090909;
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle {
+		  border-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle:hover,
+		.navbar-default .navbar-toggle:focus {
+		  background-color: #f2eded;
+		}
+		.navbar-default .navbar-toggle .icon-bar {
+		  background-color: #eaeff0;
+		}
+		.navbar-default .navbar-collapse,
+		.navbar-default .navbar-form {
+		  border-color: #eaeff0;
+		}
+		.navbar-default .navbar-link {
+		  color: #eaeff0;
+		}
+		.navbar-default .navbar-link:hover {
+		  color: #090909;
+		}
+
+		@media (max-width: 767px) {
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		    color: #eaeff0;
+		  }
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+		  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		    color: #090909;
+		  }
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+		  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		    color: #090909;
+		    background-color: #f2eded;
+		  }
+		}
+		.ml-70{
+			margin-left: 70px;
+		}
+		.text-center{
+			text-align: center;
+		}
+		.a-btn{
+			text-decoration: none !important;
+			color: white !important;
+		}
+		fieldset {
+		  overflow: hidden
+		}
+
+		.some-class {
+		  float: left;
+		  clear: none;
+		}
+
+		label {
+		  float: left;
+		  clear: none;
+		  display: block;
+		  padding: 2px 1em 0 0;
+		}
+
+		input[type=radio],
+		input.radio {
+		  float: left;
+		  clear: none;
+		  margin: 2px 0 0 2px;
+		}
+		.center-btn{
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		.d3 {
+		   height:100%; 
+		   position: relative;
+		   top: 0px;
+		}
+		.d3-2{
+		    height: 100%;
+		    overflow: hidden;
+		    padding-top: 35px;
+		    padding-bottom: 35px;
+		    width: 100%;
+		    position: absolute;
+		    top: 0;
+		}
+		.d4
+		{
+		  position: relative;
+		  max-height: 100%;
+		  overflow: auto;
+		  margin-bottom: 20px;
+		}
+		.d5{
+			margin-bottom: 20px;
+		}
+		.pb20{
+			padding-bottom: 20px;
+		}
+		.mt0{
+			margin-top: 0px;
+		}
+		.mt10{
+			margin-top: 10px;
+		}
+		.mb20{
+			margin-bottom: 20px;
+		}
+		.reg-img{
+			width: 228px;
+			height: 220px;
+		}
+		#img1{
+			margin-left: 90px;
+		}
+		.text-justify{
+			text-align: justify;
+		}
+		.mt40{
+			margin-top: 40px;
+		}
+		.ml35{
+			margin-left: 35px;
+		}
+		.bg-yellow{
+			background-color: #f2eded;
+		}
+		.image-checkbox-container input[type="checkbox"]{
+		    display: none;
+		}
+		.image-checkbox-container img{
+		    border: 0;
+		    margin: 4px;
+		}
+		.image-box img{
+			padding: 0px !important;
+			margin-top: 30px;
+			margin-left: 21px;
+			margin-right: 20px;
+			border: 2px solid #000000;
+		}
+		.image-disp{
+
+		}
+		.log_customer table,th,td {
+			padding:8px;
+			border: 1px solid #2E4372;
+		    border-collapse: collapse;
+		    text-align: center;
+		}

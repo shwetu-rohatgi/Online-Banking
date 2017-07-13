@@ -4,10 +4,10 @@
  include_once 'dbconnect.php';
 
 //it will never let you open index page if session is set
-  if( isset($_SESSION['acc_no']) ) {
-  header("Location: signup4.php");
-  exit;
- }
+  //if( isset($_SESSION['acc_no']) ) {
+  //header("Location: signup4.php");
+  //exit;
+ //}
  $error = false;
 
 if ( isset($_POST['cust-submit1']) ) {
@@ -77,7 +77,7 @@ else
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			  	<div class="navbar-header">
-			      <a class="navbar-brand" href="#">Home</a>
+			      <a class="navbar-brand" href="index.php">Home</a>
 			    </div>
 			    <ul class="nav navbar-nav">
 			      <li class="active"><a href="#">Login</a></li>

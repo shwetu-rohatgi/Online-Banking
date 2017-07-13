@@ -130,7 +130,7 @@ $_POST = $_SESSION;
                     <?php
                       for($i=0;$i<4;$i++){
                         echo '<span class="image-box">'; 
-                        echo '<img src="textplacement/reg_images/'.$p[$i].'" id='.$p[$i].' name='.$p[$i].' height="140px" width="140px" class="image-box" />';
+                        echo '<img src="textplacement/reg_images/'.$p[$i].'" id='.$p[$i].' name='.$p[$i].' height="25%" width="20%" class="image-box" />';
                         echo '</span>';
                       }
                     ?>

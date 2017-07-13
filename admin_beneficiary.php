@@ -4,30 +4,12 @@ session_start();
 //if(!isset($_SESSION['staff_login'])) 
    // header('location:staff_login.php');   
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Beneficiary Requests</title>
-        
-        <link rel="stylesheet" href="newcss.css">
-        <style>
-            .displaystaff_content table,th,td {
-    padding:6px;
-    border: 1px solid #2E4372;
-   border-collapse: collapse;
-   text-align: center;
-}
-
-        </style>
-    </head>
-        <?php include 'header.php' ?>
-       <div class="displaystaff_content">
+ 
+	
+    <?php include 'Admin_navbar.php'?>
             
-          <?php include 'admin_navbar.php'?> 
-            
-           
-    <h3 style="text-align:center;color:#2E4372;"><u>Beneficiary Requests</u></h3>
+    <br><br>       
+    <h3 style="text-align:center;color:#2E4372;">Beneficiary Requests</h3><br>
 <?php
 include_once 'dbconnect.php';
 $sql="SELECT * FROM beneficiary1 WHERE status='PENDING'";
@@ -59,15 +41,11 @@ $result=  mysql_query($sql) or die(mysql_error());
                             echo "</tr>";
                         } ?>
 </table>
-            <table align="center">
-                        <tr>
-                            <td>
-                                <input type="submit" name="submit_id" value="APPROVE BENEFICIARY" class='addstaff_button'/>
-                            </td>
-                        </tr>
-                    </table>
+            <br>
+                    <center><button type="submit" name="submit_id" value="APPROVE BENEFICIARY" class='addstaff_button '>APPROVE BENEFICIARY</button></center>
+                            
                </form>
-            </div>
+          
     <?php include 'footer.php'?>
 
 

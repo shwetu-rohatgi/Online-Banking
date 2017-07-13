@@ -10,7 +10,7 @@ session_start();
         <meta charset="UTF-8">
         <title>Transfer Funds</title>
         
-        <link rel="stylesheet" href="newcss.css">
+        <!-- <link rel="stylesheet" href="newcss.css"> -->
           <style>
             .content_customer table,th,td {
     padding:6px;
@@ -31,13 +31,14 @@ session_start();
         </style>
     </head>
         <?php include 'header.php' ?> 
-        <div class='content_customer'>
-            <div class="text">Welcome <?php echo $_SESSION['email']?></div>
-           <?php include 'customer_navbar.php'?>
+
+        <!-- <div class='content_customer'>
+            <div class="text">Welcome <?php echo $_SESSION['email']?></div> -->
+           <?php //include 'customer_navbar.php'?>
             <div class="customer_top_nav">
-            <!--  <div class="text">Welcome <?php echo $_SESSION['email']?></div> -->
+            <div class="text">Welcome <?php echo $_SESSION['email']?></div>
             </div>
-            <br><br><br><br>
+            <br>
         <h3 style="text-align:center;color:#2E4372;"><u>Transfer Funds</u></h3>
             
                     
@@ -77,5 +78,5 @@ session_start();
             echo "<br><br><div class='head'><h3>No Benefeciary Added with your account.</h3></div>";
         }
         ?>
-    </div> 
+
     <?php include 'footer.php'; ?>

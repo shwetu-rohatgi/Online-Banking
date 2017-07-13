@@ -54,7 +54,8 @@ session_start();
 				<center>
 					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="addcustomer.php" class="a-btn">Add New Customer</a></button><br>
 					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="admin_beneficiary.php" class="a-btn">Approve Beneficiary</a></button><br>
-					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="deletecustomer.php" class="a-btn">Delete Customer</a></button>
+					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="deletecustomer.php" class="a-btn">Delete Customer</a></button><br>
+					<button class="btn btn-primary btn-group-lg center-btn mt40"><a href="asklogs.php" class="a-btn">View Logs</a></button>
 				</center>
 				
 			</div>

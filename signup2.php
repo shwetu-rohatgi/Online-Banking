@@ -20,6 +20,9 @@
   	$pass2 = htmlspecialchars($_POST['cust-confirm-pwd']);
 	//$_POST = $_SESSION;
   	$acc_no = $_SESSION['acc_no'];
+	$q=mysql_query("SELECT userId FROM users WHERE Account_no='$acc_no'");
+    $f = mysql_fetch_array($q);
+	$ud=$f[0];
 	
   	echo "<h1>$acc_no</h1>";
 
@@ -42,6 +45,11 @@
 	 		
 	 		$query = "UPDATE users SET userPass = '$newpass' WHERE Account_no='$acc_no'";
 	 		$res = mysql_query($query);
+
+			// updating attempts table for new signup
+			$query2 = "INSERT INTO attempts(userId,Account_no) VALUES('$ud','$acc_no')";
+	 		$res9 = mysql_query($query2);
+
 
 
 	 		if($res){

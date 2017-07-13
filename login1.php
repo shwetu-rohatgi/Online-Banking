@@ -8,27 +8,44 @@
   // header("Location: login1.php");
  // exit;
   //}
- 
+ date_default_timezone_set('Asia/Kolkata');
+ //echo date('d-m-Y H:i:s');
  $error = false;
- 
+ //$currentDateTime = date('Y-m-d H:i:s');
+ $lDate = date("Y-m-d H:i:s");
+ //$milliseconds = round(microtime(true) * 10000);
+ //echo $milliseconds;
+ //echo  $lDate;
+ $logdate = date('Y-m-d');
  if( isset($_POST['btn-login']) ) { 
 	 
 	 
-  
+  $msec = round(microtime(true) * 1000);
   // prevent sql injections/ clear user invalid inputs
   $email = trim($_POST['email']);
   $email = strip_tags($email);
   $email = htmlspecialchars($email);
+  //$_SESSION['newmail'] = $email;
   if(empty($email)){
    $error = true;
    $emailError = "Please enter your email address.";
    echo $emailError;
-  } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-   $error = true;
-   $emailError = "Please enter valid email address.";
-   echo $emailError;
-  }
+  } //else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+   //$error = true;
+   //$emailError = "Please enter valid email address.";
+   //echo $emailError;
+  //}
 if (!$error) {
+
+ //$msec = round(microtime(true) * 10000);
+ $q1 = "SELECT userId,Account_no FROM users WHERE userEmail='$email'";
+ $res = mysql_query($q1);
+ $uR=mysql_fetch_array($res);
+ $uid= $uR[0];
+ $acno= $uR[1];
+
+ mysql_query("INSERT INTO logs(userId,Account_no,logsdate,imsec,login1) VALUES('$uid','$acno','$logdate','$msec','$lDate')");
+
    //$res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
    //$row=mysql_fetch_array($res);
    //$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
@@ -72,7 +89,7 @@ if (!$error) {
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			  	<div class="navbar-header">
-			      <a class="navbar-brand" href="#">Home</a>
+			      <a class="navbar-brand" href="index.php">Home</a>
 			    </div>
 			    <ul class="nav navbar-nav">
 			      <li class="active"><a href="#">Login</a></li>
@@ -87,7 +104,7 @@ if (!$error) {
 				<div class="col-md-4">
 					<form action="" method="post">
 						<div class="form-group">
-						  <label for="usrname">Username(email):</label>
+						  <label for="usrname">Username:</label>
 						  <input type="text" class="form-control" name="email" id="email" required>
 						</div>
 						<div class="form-group">
@@ -114,7 +131,7 @@ if (!$error) {
 
 
 		</div>
-
+		
 	</body>
 <html>
 	

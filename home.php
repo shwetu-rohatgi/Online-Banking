@@ -5,10 +5,15 @@
  // echo session_id();
  ini_set('display_errors',1); 
  error_reporting(E_ALL); 
- 
  $_POST = $_SESSION;
+ //print_r($_SESSION);
  
  require_once 'dbconnect.php';
+ date_default_timezone_set('Asia/Kolkata');
+ $hDate = date("Y-m-d H:i:s");
+ echo $hDate;
+ $ms = round(microtime(true) * 1000);
+ echo $ms;
  
  // if session is not set this will redirect to login page
  if( !isset($_SESSION['user']) ) {
@@ -31,6 +36,58 @@
                 $_SESSION['name']=$name;
 
 
+     $re=mysql_query("SELECT MAX(sl_no) FROM logs WHERE userId=".$_SESSION['user']);//88
+     $uRow=mysql_fetch_array($re);
+	 $sno = $uRow[0];//79
+    // print_r($uRow);
+     $resss=mysql_query("SELECT imsec FROM logs WHERE sl_no='$sno'");
+     $uRow1=mysql_fetch_array($resss);
+	 $que=mysql_query("SELECT cur_status,Account_no FROM users WHERE userId=".$_SESSION['user']) or die(mysql_error());
+	 $uRow6=mysql_fetch_array($que);
+	 print_r($uRow6);
+	 $s = $uRow6[0];
+	 $ano = $uRow6[1];
+	 echo "<br>";
+	 echo $s;
+	 $msec = $uRow1[0];
+	 //$diff = ($ms-$msec)/1000;
+	 print_r($uRow1);
+	// echo $s;
+	 //echo $diff;
+	 //echo $msec;
+	 echo $diff;
+	 if(!$s)
+	 {
+     $qu = "UPDATE logs SET login2 = '$hDate' WHERE sl_no='$sno'";
+	 $r = mysql_query($qu);
+	 
+	 $difference = ($ms-$msec)/1000;
+	 $qu1 = "UPDATE users SET cur_status = 1 WHERE userId=".$_SESSION['user'];
+	 $r1 = mysql_query($qu1);
+
+
+	 $qu2 = "UPDATE logs SET diff = '$difference' WHERE sl_no='$sno'";
+     $r2 = mysql_query($qu2);
+
+	 $quer14 = "SELECT net_attempt from attempts WHERE Account_no='$ano'";
+	 $resq14 = mysql_query($quer14) or die(mysql_error());
+	 $fetch14 = mysql_fetch_array($resq14);
+	 $ta = $fetch14[0];
+
+
+	 $quer13 = "UPDATE logs SET total_attempt = '$ta'  WHERE sl_no='$sno'";
+	 $resq13 = mysql_query($quer13);
+
+
+	 $quer11 = "UPDATE attempts SET net_attempt = 0 WHERE userId=".$_SESSION['user'];
+	 $resq1 = mysql_query($quer11);
+	 //unset($uRow);
+	 }
+	
+
+  //unset($uRow);ss
+
+
      $sql="SELECT MAX(transactionid) from `".$account_no."`";
      $result=mysql_query($sql) or die(mysql_error());
      $rws=  mysql_fetch_array($result);
@@ -43,8 +100,9 @@
 	 }
 
 
+
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -55,7 +113,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="banking.css">
-
+ -->
 <script language="JavaScript" type="text/javascript">
 //--------------- LOCALIZEABLE GLOBALS ---------------
 var d=new Date();
@@ -67,7 +125,7 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
 
 </head>
 
-<body>
+<!-- <body>
 
  
       <div class="container">
@@ -79,28 +137,17 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
         <hr>
           <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">Home</a>
-              </div>
               <ul class="nav navbar-nav">
-                <!-- <li class="active"><a href="#">User Account</a></li> -->
-                <li id='caption'><b><u>Dashboard</u></b></li>
-				<li><a href="customer_account_statement.php">Accounts Statement</a></li>
-
-                <!-- <li><a href="#">Transactions</a></li> -->
-                <!-- <li><a href="#">Settings</a></li> -->
-              </ul>
-			  <ul class="nav navbar-nav">
-        <li id='caption'><b><u>Funds Transfer</u></b></li>
-        <li><a href="add_beneficiary.php">Add Beneficiary</a></li>
-                    <li><a href="display_beneficiary.php">View added Beneficiary</a></li>
+                <li class="active"><a href="#">User Account</a></li>
+					<li id='caption'><a>Dashboard</a></li>
+					<li><a href="customer_account_statement.php">Statement</a></li>
+					<li><a href="add_beneficiary.php">Add Beneficiary</a></li>
+                    <li><a href="display_beneficiary.php">View Beneficiary</a></li>
                     <li><a href="customer_transfer.php">Transfer Funds</a></li>
-                    </ul>
- <ul class="nav navbar-nav">
-        <li id='caption'><b><u>Settings</u></b></li>
-        <li><a href="change_password_customer.php">Change Password</a></li>
-                    </ul>
-              <ul class="nav navbar-nav navbar-right">
+					<li id='caption'><a>Settings</a></li>
+					<li><a href="change_password_customer.php">Change Password</a></li>
+				</ul>
+                <ul class="nav navbar-nav navbar-right">
               
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -113,20 +160,14 @@ var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear()
               </ul>
             </div>
           </nav>
-          <TABLE WIDTH="100%" ALIGN="CENTER">
-            <TR BGCOLOR="#f2eded">
-              <TD><MARQUEE>Welcome <?php if(!empty($_POST['email'])) echo $userRow['userName']; ?> To Secure Net Banking...</MARQUEE></TD>
-            </TR>
-          </TABLE>
-          <table WIDTH="100%" ALIGN="CENTER">
-            <tr bgcolor="">
-                <td colspan="7" id="dateformat" height="30">&nbsp;&nbsp;
+ -->          
+              <?php include 'header.php' ?>
+			  <MARQUEE BGCOLOR="#f2eded">Welcome <?php if(!empty($_POST['email'])) echo $userRow['userName']; ?> To Secure Net Banking...</MARQUEE>
+			  <br>
                   <script language="JavaScript" type="text/javascript">
                   document.write(TODAY);  
                   </script>
-                </td>
-            </tr>
-          </table>
+             
         
             <h2 class="text-center">My Account</h2>
             <div class="col-md-12">

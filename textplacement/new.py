@@ -24,7 +24,7 @@ def place(image, text):
 	x=np.arange(beg,l-beg,int((l-2*beg)/len(text)))
 	bb=random.randint(int(w/12),int(w/8))
 	y=np.arange(bb,w-bb,int((w-2*bb)/len(text)))
-	font = ImageFont.truetype("C:/wamp/www/iitrpr-net-banking/textplacement/fonts/abyssinica/AbyssinicaSIL-R.ttf",int((w-2*bb)/len(text)))
+	font = ImageFont.truetype("F:/wamp/www/secure-banking/textplacement/fonts/abyssinica/AbyssinicaSIL-R.ttf",int((w-2*bb)/len(text)))
 	for i in range(len(text)):
 		draw.text((x[i],y[i]),text[i],(0,0,0),font=font)
 
@@ -45,8 +45,8 @@ def place(image, text):
 
 
 def __main__():
-	ipath="C:/wamp/www/iitrpr-net-banking/textplacement/reg_images"
-	opath="C:/wamp/www/iitrpr-net-banking/textplacement/soutputs"
+	ipath="F:/wamp/www/secure-banking/textplacement/reg_images"
+	opath="F:/wamp/www/secure-banking/textplacement/soutputs"
 	for file in os.listdir(opath):
                         file_path=os.path.join(opath,file)
                         try:
