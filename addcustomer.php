@@ -237,11 +237,14 @@ mysql_query($query3);
 							<label for="dob">DOB:</label>
 						  	<input type="date" class="form-control" id="dob" name="dob" required><br>
 						  	<label for="minval">Account Balance:</label>
-						  	<input type="text" class="form-control" name="minval" id="textInput" value="1000" required><br>
-						  	<label for="mobile">Mobile:</label>
-						  	<input type="text" class="form-control" id="mobile" name="mobile" required>
+						  	<input type="text" class="form-control" name="minval" id="textInput" value="1000" onkeypress="return isNumber(event)" required><br>
+						  	<label for="mobile">Mobile (without 0):</label>
+						  	<!-- <input type="text" class="form-control" id="mobile" name="mobile" required> -->
+                <input type="text" class="form-control text" id="mobile" name="mobile" maxlength="10" required>
+                <span class="error">Mobile number invalid</span>
 						  	<label for="email">Email:</label>
 						  	<input type="email" class="form-control" name="email" id="email" required>
+                <span class="error">Email address invalid</span>
 							<!-- <label for="password">Password:</label>
 													  	<input type="password" class="form-control" name="pass" id="password" required> -->
 							</div>
@@ -263,6 +266,30 @@ mysql_query($query3);
 
 
 		</div>
+    <script>
+      $('#email').on('input', function() {
+        var input=$(this);
+        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var is_email=re.test(input.val());
+        if(is_email){input.removeClass("invalid").addClass("valid");}
+        else{input.removeClass("valid").addClass("invalid");}
+      });
+      $('#mobile').on('input', function() {
+        var input=$(this);
+        var re = /[2-9]{2}\d{8}/;
+        var is_email=re.test(input.val());
+        if(is_email){input.removeClass("invalid").addClass("valid");}
+        else{input.removeClass("valid").addClass("invalid");}
+      });
+      function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+      }
+    </script>
 
 	</body>
 <html>

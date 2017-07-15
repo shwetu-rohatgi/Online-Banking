@@ -189,3 +189,32 @@
 		    border-collapse: collapse;
 		    text-align: center;
 		}
+		input.invalid, textarea.invalid{
+			border: 2px solid red;
+		}
+
+		input.valid, textarea.valid{
+			border: 2px solid green;
+		}
+		.error{
+			display: none;
+			margin-left: 10px;
+			margin-bottom: 5px;
+		}		
+		.error_show{
+			color: red;
+			margin-left: 10px;
+			margin-bottom: 5px;
+		}
+		.code_error{
+			display: none;
+		}
+		.code_show{
+			color: red;
+			margin-left: 10px;
+			margin-bottom: 5px;
+		}
+		/*.validation
+	    {
+	      margin-bottom: 20px;
+	    }*/
