@@ -2,7 +2,7 @@
  ob_start();
  session_start();
  include_once 'dbconnect.php';
- print_r($_SESSION);
+ //print_r($_SESSION);
 
 // it will never let you open index(login) page if session is set
  if ( isset($_SESSION['user'])!="" ) {
@@ -24,15 +24,15 @@
     $f = mysql_fetch_array($q);
 	$ud=$f[0];
 	
-  	echo "<h1>$acc_no</h1>";
+  	//echo "<h1>$acc_no</h1>";
 
   	if(empty($pass1) || empty($pass2)){
 	   $error = true;
-	   $passError = "Please enter your password.";
+	   $passError = '<div class="warning">Please enter your password.</div>';
 	   echo $passError;
 	}else if( strlen($pass1) < 6) {
    		$error = true;
-   		$passError = "Password must have atleast 6 characters.";
+   		$passError = '<div class="warning">Password must have atleast 6 characters.</div>';
    		echo $passError;
   	}
 
@@ -41,7 +41,6 @@
 
 	 		// password encrypt using SHA256();
 	 		$newpass = hash('sha256', $pass1);
-
 	 		
 	 		$query = "UPDATE users SET userPass = '$newpass' WHERE Account_no='$acc_no'";
 	 		$res = mysql_query($query);
@@ -58,12 +57,12 @@
 			    unset($pass2);
 	 		 } 
 	 		 else{
-			    $errMSG = "<h1>Failure!Try again later..</h1>";
+			    $errMSG = '<div class="warning">Failure!Try again later..</div>';
 				echo $errMSG;
 	 		}
 	 	}
 	 	else{
-	 		echo "Passwords do not match";
+	 		echo '<div class="warning">Passwords do not match</div>';
 	 	}
  	}
  }

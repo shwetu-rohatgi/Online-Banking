@@ -26,22 +26,22 @@
   // basic name validation
   if (empty($name)) {
    $error = true;
-   $nameError = "Please enter your full name.";
+   $nameError = '<div class="warning">Please enter your full name.</div>';
    echo $nameError;
   } else if (strlen($name) < 3) {
    $error = true;
-   $nameError = "Name must have atleat 3 characters.";
+   $nameError = '<div class="warning">Name must have atleat 3 characters.</div>';
    echo $nameError;
   } else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
    $error = true;
-   $nameError = "Name must contain alphabets and space.";
+   $nameError = '<div class="warning">Name must contain alphabets and space.</div>';
    echo $nameError;
   }
   
   //basic email validation
   if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
    $error = true;
-   $emailError = "Please enter valid email address.";
+   $emailError = '<div class="warning">Please enter valid email address.</div>';
    echo $emailError;
   } else {
    // check email exist or not
@@ -50,7 +50,7 @@
    $count = mysql_num_rows($result);
    if($count!=0){
     $error = true;
-    $emailError = "Provided Email is already in use.";
+    $emailError = '<div class="warning">Provided Email is already in use.</div>';
 	echo $emailError;
    }
   }
@@ -69,13 +69,13 @@ if(!empty($phoneNumber)) // phone number is not empty
      // phone number is not valid
     {
 	 $error = true;
-      echo 'Phone number invalid !';
+      echo '<div class="warning">Phone number invalid !</div>';
     }
 }
 else // phone number is empty
 {
 	$error = true;
-  echo 'You must provide a phone number !';
+  echo '<div class="warning">You must provide a phone number !</div>';
 }
 $date = $_POST['dob'];
 $min_amt = $_POST['minval'];
@@ -83,11 +83,11 @@ $min_amt = $_POST['minval'];
  //amount validation
   if (empty($min_amt)){
    $error = true;
-   $amtError = "Please enter Minimum Value";
+   $amtError = '<div class="warning">Please enter Minimum Value</div>';
    echo $amtError;
   } else if(($min_amt) < 1000) {
    $error = true;
-   $amtError = "Minimum amount should be 1000";
+   $amtError = '<div class="warning">Minimum amount should be 1000</div>';
    echo $amtError;
   }
 
@@ -98,7 +98,7 @@ $min_amt = $_POST['minval'];
    $res = mysql_query($query);
     
    if ($res) {
-    $errMSG = "<div class=\"bg-yellow\"><center><h4>Successfully registered!</h4></center></div>";
+    $errMSG = '<div class="bg-yellow warning"><h4>Successfully registered!</h4></div>';
 	  echo $errMSG;
 	$query=mysql_query("SELECT userId FROM users WHERE userEmail='$email'");
 	$row = mysql_fetch_array($query);
@@ -141,7 +141,7 @@ $min_amt = $_POST['minval'];
     	$accno = "3284".$id;
     }
     else{
-    	echo "Account no. does not exist";
+    	echo '<div class="warning"><h4>Account no. does not exist</h4></div>';
     }
     return $accno;
   }
@@ -153,7 +153,7 @@ $min_amt = $_POST['minval'];
     mysql_query($query2);
     echo "<div class=\"bg-yellow\"><center><h4>Account No.: </h4>".$finalacc_no ." <br> <h4>First Time Password: </h4>" . $temp_pwd."</center></div>";
 	$query3 = "CREATE TABLE `".$finalacc_no."` (
-transactionid int(12) NOT NULL AUTO_INCREMENT,
+  transactionid int(12) NOT NULL AUTO_INCREMENT,
   transactiondate date DEFAULT NULL,
   name varchar(255) DEFAULT NULL,
   credit int(10) DEFAULT NULL,
@@ -172,8 +172,8 @@ mysql_query($query3);
     	 
       //unset($pass);
     } else {
-        $errTyp = "<center><h4>danger</h4></center>";
-        $errMSG = "<center><h4>Something went wrong, try again later...</h4></center>";
+        $errTyp = '<div class="warning"><h4></h4></div>';
+        $errMSG = '<div class="warning"><h4>Something went wrong, try again.</h4></div>';
     	  echo $errTyp;
     	  echo $errMSG;
     }

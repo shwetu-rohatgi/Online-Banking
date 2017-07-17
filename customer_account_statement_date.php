@@ -10,7 +10,7 @@ session_start();
         <meta charset="UTF-8">
         <title>Account Statement</title>
         
-        <link rel="stylesheet" href="newcss.css">
+        <!-- <link rel="stylesheet" href="newcss.css"> -->
         <style>
             .content_customer table,th,td {
     padding:6px;
@@ -22,10 +22,10 @@ session_start();
         </style>
     </head>
         <?php include 'header.php' ?>
-<div class='content_customer'>
-<p><b>Welcome <?php echo $_SESSION['email']?></b></p>
-           <?php include 'customer_navbar.php'?>
-    <!-- <p><b>Welcome <?php echo $_SESSION['email']?></b></p> -->
+<!-- <div class='content_customer'> -->
+<p>Welcome <?php echo $_SESSION['email']?></p>
+           <?php //include 'customer_navbar.php'?>
+     <!-- <p><b>Welcome <?php //echo $_SESSION['email']?></b></p>  -->
     
 
 
@@ -65,5 +65,6 @@ session_start();
                         }
                         } ?>
 </table>
-    </div>
-       <?php include 'footer.php'?>
+
+
+   <?php include 'footer.php'?>

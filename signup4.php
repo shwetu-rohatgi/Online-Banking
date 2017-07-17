@@ -4,7 +4,7 @@
  include_once 'dbconnect.php';
 
  // $_POST = $_SESSION;
- $p =array();
+$p =array();
 $p[0] = $_SESSION['pic1'];
 $p[1] = $_SESSION['pic2'];
 $p[2] = $_SESSION['pic3'];
@@ -42,14 +42,14 @@ if ( isset($_POST['cust-confirm']) ) {
 		$res = mysql_query($query);		
 		if($res>0){
       header("Location: signup_success.php");
-			echo "<h2>Registration Success</h2>";
+			echo '<div class="warning">Registration Success</div>';
 			unset($p);
 			unset($acc_no1);
 		}else{
-			echo "<h2>Error<h2>";
+			echo '<div class="warning">Error</div>';
 		}
 	}else{
-		echo "Success";
+		echo '<div class="warning">Success</div>';
 	}
 
 }else{

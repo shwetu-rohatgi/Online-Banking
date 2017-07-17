@@ -24,7 +24,7 @@ session_start();
         <?php include 'header.php' ?>
 
 		<!-- <div class='content_customer'>
-		<div class="text">Welcome <?php echo $_SESSION['email']?></div> -->
+		<div class="text">Welcome <?php //echo $_SESSION['email']?></div> -->
         <?php //include 'customer_navbar.php'?>
     
     

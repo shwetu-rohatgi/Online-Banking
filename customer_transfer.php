@@ -1,5 +1,10 @@
 <?php 
+ob_start();
 session_start();
+require_once 'dbconnect.php';
+
+ // $_POST = $_SESSION;
+ // print_r($_SESSION);
         
 //if(!isset($_SESSION['customer_login'])) 
     //header('location:index.php');   
@@ -33,7 +38,7 @@ session_start();
         <?php include 'header.php' ?> 
 
         <!-- <div class='content_customer'>
-            <div class="text">Welcome <?php echo $_SESSION['email']?></div> -->
+            <div class="text">Welcome <?php //echo $_SESSION['email']?></div> -->
            <?php //include 'customer_navbar.php'?>
             <div class="customer_top_nav">
             <div class="text">Welcome <?php echo $_SESSION['email']?></div>
@@ -42,8 +47,9 @@ session_start();
         <h3 style="text-align:center;color:#2E4372;"><u>Transfer Funds</u></h3>
             
                     
-                    <?php
-                    include_once 'dbconnect.php';
+        <?php
+                    
+        //include_once 'dbconnect.php';
         $sender_id=$_SESSION["login_id"];// Account_no of sender
         
         
@@ -51,6 +57,7 @@ session_start();
         $result=  mysql_query($sql);
         $rws=mysql_fetch_array($result);
         $s_id=$rws[1];              
+        
         ?>
         
     

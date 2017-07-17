@@ -25,6 +25,7 @@
   $email = trim($_POST['email']);
   $email = strip_tags($email);
   $email = htmlspecialchars($email);
+  $rc = $_POST['rcode'];
   //$_SESSION['newmail'] = $email;
   if(empty($email)){
    $error = true;
@@ -35,6 +36,14 @@
    //$emailError = "Please enter valid email address.";
    //echo $emailError;
   //}
+if (preg_match('/^\d{6}$/', $rc)) {
+	$error = false;
+  // pass
+} else {
+   $error = true;
+   $r_code_Error = "Random Code should be of 6 digits!";
+   echo $r_code_Error;
+ }
 if (!$error) {
 
  //$msec = round(microtime(true) * 10000);
@@ -73,7 +82,7 @@ if (!$error) {
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   		<link rel="stylesheet" href="banking.css">
 		<script src="banking.js"></script>
@@ -108,8 +117,9 @@ if (!$error) {
 						  <input type="text" class="form-control" name="email" id="email" required>
 						</div>
 						<div class="form-group">
-						  <label for="rcode">Random Code:</label>
-						  <input type="text" class="form-control" name="rcode" id="rcode" maxlength="6" required>
+						  <label for="rcode">Random Code (6 Digits):</label>
+						  <input type="text" class="form-control" name="rcode" id="rcode" maxlength="6" onkeypress="return isNumber(event)" required>
+						  <span class="code_error" id="code_error">Invalid Random Code</span>
 						</div>
 						<div class="checkbox">
 					      <label><input type="checkbox" id="checkme">I have Verified the presence of padlock symbol and HTTPS in the URL</label>
@@ -131,6 +141,29 @@ if (!$error) {
 
 
 		</div>
+		<script>
+		function isNumber(evt) {
+		    evt = (evt) ? evt : window.event;
+		    var charCode = (evt.which) ? evt.which : evt.keyCode;
+		    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+		        return false;
+		    }
+		    return true;
+		}
+
+		$('#rcode').live('input',function(){
+		    var textbox = document.getElementById("rcode");
+		    var r_code = document.getElementById("code_error");
+		    if(textbox.value.length == 6){
+		        textbox.style.border = "2px solid green";
+		        //$("#rcode").parent().after("<div class='validation' style='color:green;margin-bottom: 10px;'></div>");
+		    }
+		    else{
+		        textbox.style.border = "2px solid red";
+		        //$("#rcode").parent().after("<div class='validation' style='color:red;margin-bottom: 10px;'>Enter a 6 digit Random Code</div>");
+		    }
+		})
+		</script>
 		
 	</body>
 <html>

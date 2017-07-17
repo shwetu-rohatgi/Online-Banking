@@ -39,13 +39,13 @@ if ( isset($_POST['cust-submit1']) ) {
 			  		   
 		   } else {
 		   	$error = true;
-		    $errMSG = "Incorrect Credentials, Try again...";
+		    $errMSG = '<div class="warning">Incorrect Credentials, Try again.</div>';
 			echo $errMSG;
 		   }
 		  }
 	}
 	else
-		echo "Invalid Credentials";
+		echo '<div class="warning">Invalid Credentials</div>';
 
 }
 else

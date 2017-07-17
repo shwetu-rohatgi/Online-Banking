@@ -15,18 +15,18 @@ if ( isset($_POST['btn_dlt']) ) {
 		$res2 = mysql_query($query2);
 		$n2 = mysql_affected_rows();
 		if($n1 > 0 && $n2 > 0){
-			$errMSG = "<h2>Record deleted successfully!</h2>";
+			$errMSG = '<div class="warning">Record deleted successfully!</div>';
 			echo $errMSG;
 			}
 			else{
 
-				echo "<h1>error deleting records! Record not found</h1>";
+				echo '<div class="warning">error deleting records! Record not found</div>';
 			}
 	}
 	
 else {
-    $errTyp = "<h1>The two fields did not Match</h1>";
-    $errMSG = "<h1>Please enter carefully...</h1>";
+    $errTyp = '<div class="warning">The two fields did not Match</div>';
+    $errMSG = '<div class="warning">Please enter carefully...</div>';
 	echo $errTyp;
 	echo $errMSG;
 

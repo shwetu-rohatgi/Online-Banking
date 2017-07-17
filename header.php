@@ -14,15 +14,15 @@ $userRow=mysql_fetch_array($res);
 
 if(isset($_GET['home-logout'])) {
   
-  echo "hello";
-  print_r($_SESSION);
+  //echo "hello";
+  //print_r($_SESSION);
 
   date_default_timezone_set('Asia/Kolkata');
   $oDate = date("Y-m-d H:i:s");
   $re=mysql_query("SELECT MAX(sl_no) FROM logs WHERE userId=".$_SESSION['user']);
   $uRow=mysql_fetch_array($re)or die(mysql_error());
   $sno = $uRow[0];
-  echo $sno;
+  //echo $sno;
   $qu2 = "UPDATE users SET cur_status = 0 WHERE userId=".$_SESSION['user'];
   $r3 = mysql_query($qu2)or die(mysql_error());
 
@@ -36,8 +36,8 @@ if(isset($_GET['home-logout'])) {
 
   unset($_SESSION['user']);
   session_unset();
-  session_destroy();
   header("Location: index.php");
+  session_destroy();
   exit;
  }else{
 	 echo " ";

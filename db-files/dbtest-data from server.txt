@@ -1,0 +1,608 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jul 17, 2017 at 05:00 AM
+-- Server version: 5.5.56
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `dbtest`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000000`
+--
+
+CREATE TABLE `32840000000` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000000`
+--
+
+INSERT INTO `32840000000` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'Sumit Kumar Thakur', 51000, 0, 51000.00, 'cash deposit'),
+(2, '2017-07-14', 'Sumit Kumar Thakur', 0, 4567, 46433.00, 'TO Shwetanshu'),
+(3, '2017-07-14', 'Sumit Kumar Thakur', 0, 5678, 40755.00, 'TO Shwetanshu'),
+(4, '2017-07-14', 'Sumit Kumar Thakur', 0, 456, 40299.00, 'TO Shwetanshu'),
+(5, '2017-07-14', 'Sumit Kumar Thakur', 0, 456, 39843.00, 'TO Shwetanshu'),
+(6, '2017-07-14', 'Sumit Kumar Thakur', 0, 345, 39498.00, 'TO Shwetanshu'),
+(7, '2017-07-14', 'Sumit Kumar Thakur', 0, 123, 39375.00, 'TO Shwetanshu'),
+(8, '2017-07-14', 'Sumit Kumar Thakur', 0, 567, 38808.00, 'TO Shwetanshu'),
+(9, '2017-07-14', 'Sumit Kumar Thakur', 0, 123, 38685.00, 'TO Shwetanshu'),
+(10, '2017-07-14', 'Sumit Kumar Thakur', 0, 123, 38562.00, 'TO Shwetanshu'),
+(11, '2017-07-14', 'Sumit Kumar Thakur', 0, 123, 38439.00, 'TO Shwetanshu'),
+(12, '2017-07-14', 'Sumit Kumar Thakur', 0, 122, 38317.00, 'TO Shwetanshu'),
+(13, '2017-07-14', 'Sumit Kumar Thakur', 2000, 0, 40317.00, 'BY Ashu'),
+(14, '2017-07-15', 'Sumit Kumar Thakur', 100, 0, 40417.00, 'BY Ashu'),
+(15, '2017-07-16', 'Sumit Kumar Thakur', 100, 0, 40517.00, 'BY Ashu'),
+(16, '2017-07-16', 'Sumit Kumar Thakur', 200, 0, 40717.00, 'BY Ashu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000001`
+--
+
+CREATE TABLE `32840000001` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000001`
+--
+
+INSERT INTO `32840000001` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'Shwetanshu', 121000, 0, 121000.00, 'cash deposit'),
+(2, '2017-07-14', 'Shwetanshu', 4567, 0, 125567.00, 'BY Sumit Kumar Thakur'),
+(3, '2017-07-14', 'Shwetanshu', 5678, 0, 131245.00, 'BY Sumit Kumar Thakur'),
+(4, '2017-07-14', 'Shwetanshu', 456, 0, 131701.00, 'BY Sumit Kumar Thakur'),
+(5, '2017-07-14', 'Shwetanshu', 456, 0, 132157.00, 'BY Sumit Kumar Thakur'),
+(6, '2017-07-14', 'Shwetanshu', 345, 0, 132502.00, 'BY Sumit Kumar Thakur'),
+(7, '2017-07-14', 'Shwetanshu', 123, 0, 132625.00, 'BY Sumit Kumar Thakur'),
+(8, '2017-07-14', 'Shwetanshu', 567, 0, 133192.00, 'BY Sumit Kumar Thakur'),
+(9, '2017-07-14', 'Shwetanshu', 123, 0, 133315.00, 'BY Sumit Kumar Thakur'),
+(10, '2017-07-14', 'Shwetanshu', 123, 0, 133438.00, 'BY Sumit Kumar Thakur'),
+(11, '2017-07-14', 'Shwetanshu', 123, 0, 133561.00, 'BY Sumit Kumar Thakur'),
+(12, '2017-07-14', 'Shwetanshu', 122, 0, 133683.00, 'BY Sumit Kumar Thakur');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000002`
+--
+
+CREATE TABLE `32840000002` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000002`
+--
+
+INSERT INTO `32840000002` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'Puneet Goyal', 46890, 0, 46890.00, 'cash deposit');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000003`
+--
+
+CREATE TABLE `32840000003` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000003`
+--
+
+INSERT INTO `32840000003` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'Joohi', 21000, 0, 21000.00, 'cash deposit');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000004`
+--
+
+CREATE TABLE `32840000004` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000004`
+--
+
+INSERT INTO `32840000004` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'abc', 1000, 0, 1000.00, 'cash deposit'),
+(2, '2017-07-15', 'abc', 2500, 0, 3500.00, 'BY IIT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000005`
+--
+
+CREATE TABLE `32840000005` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000005`
+--
+
+INSERT INTO `32840000005` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-14', 'Ashu', 111000, 0, 111000.00, 'cash deposit'),
+(2, '2017-07-14', 'Ashu', 0, 2000, 109000.00, 'TO Sumit Kumar Thakur'),
+(3, '2017-07-15', 'Ashu', 0, 100, 108900.00, 'TO Sumit Kumar Thakur'),
+(4, '2017-07-16', 'Ashu', 0, 100, 108800.00, 'TO Sumit Kumar Thakur'),
+(5, '2017-07-16', 'Ashu', 0, 200, 108600.00, 'TO Sumit Kumar Thakur');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000006`
+--
+
+CREATE TABLE `32840000006` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000006`
+--
+
+INSERT INTO `32840000006` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-15', 'IIT', 5000, 0, 5000.00, 'cash deposit'),
+(2, '2017-07-15', 'IIT', 0, 2500, 2500.00, 'TO abc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `32840000007`
+--
+
+CREATE TABLE `32840000007` (
+  `transactionid` int(12) NOT NULL,
+  `transactiondate` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `credit` int(10) DEFAULT NULL,
+  `debit` int(10) DEFAULT NULL,
+  `amount` float(10,2) DEFAULT NULL,
+  `narration` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `32840000007`
+--
+
+INSERT INTO `32840000007` (`transactionid`, `transactiondate`, `name`, `credit`, `debit`, `amount`, `narration`) VALUES
+(1, '2017-07-16', 'Shwetu', 5000, 0, 5000.00, 'cash deposit');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attempts`
+--
+
+CREATE TABLE `attempts` (
+  `sl_no` int(10) NOT NULL,
+  `userId` int(10) NOT NULL,
+  `Account_no` varchar(15) COLLATE utf8_bin NOT NULL,
+  `net_attempt` int(1) NOT NULL DEFAULT '0',
+  `last_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `t_msec` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `attempts`
+--
+
+INSERT INTO `attempts` (`sl_no`, `userId`, `Account_no`, `net_attempt`, `last_time`, `t_msec`) VALUES
+(1, 1, '32840000000', 0, '2017-07-15 07:41:38', '1500070298099'),
+(2, 5, '32840000004', 0, '2017-07-14 16:04:32', '1500014072177'),
+(3, 6, '32840000005', 0, '0000-00-00 00:00:00', ''),
+(4, 7, '32840000006', 3, '2017-07-16 21:50:36', '1500207636723'),
+(6, 8, '32840000007', 0, '0000-00-00 00:00:00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `beneficiary1`
+--
+
+CREATE TABLE `beneficiary1` (
+  `id` int(10) NOT NULL,
+  `sender_id` varchar(12) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `sender_name` varchar(255) NOT NULL,
+  `reciever_id` varchar(12) NOT NULL,
+  `reciever_name` varchar(255) NOT NULL,
+  `status` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `beneficiary1`
+--
+
+INSERT INTO `beneficiary1` (`id`, `sender_id`, `sender_name`, `reciever_id`, `reciever_name`, `status`) VALUES
+(1, '32840000000', 'Sumit Kumar Thakur', '32840000001', 'shwetanshu', 'ACTIVE'),
+(2, '32840000005', 'Ashu', '32840000000', 'Sumit', 'ACTIVE'),
+(3, '32840000006', 'IIT', '32840000004', 'abc', 'ACTIVE');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logs`
+--
+
+CREATE TABLE `logs` (
+  `sl_no` int(15) NOT NULL,
+  `userId` int(18) NOT NULL,
+  `Account_no` varchar(18) COLLATE utf8_bin NOT NULL,
+  `logsdate` date NOT NULL,
+  `imsec` varchar(30) COLLATE utf8_bin NOT NULL,
+  `login1` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `login2` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `diff` varchar(10) COLLATE utf8_bin NOT NULL,
+  `out_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `total_attempt` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`sl_no`, `userId`, `Account_no`, `logsdate`, `imsec`, `login1`, `login2`, `diff`, `out_time`, `total_attempt`) VALUES
+(1, 0, '', '2017-07-14', '1499991045555', '2017-07-14 09:40:45', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(2, 1, '32840000000', '2017-07-14', '1499993711888', '2017-07-14 10:25:11', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(3, 1, '32840000000', '2017-07-14', '1499993843223', '2017-07-14 10:27:23', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(4, 1, '32840000000', '2017-07-14', '1499993901641', '2017-07-14 10:28:21', '2017-07-14 10:35:17', '415.746', '2017-07-14 10:37:16', 3),
+(5, 1, '32840000000', '2017-07-14', '1499994682378', '2017-07-14 10:41:22', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(6, 1, '32840000000', '2017-07-14', '1499996605322', '2017-07-14 11:13:25', '2017-07-14 11:13:44', '18.994', '2017-07-14 11:13:51', 1),
+(7, 1, '32840000000', '2017-07-14', '1499996642732', '2017-07-14 11:14:02', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(8, 0, '', '2017-07-14', '1499996703459', '2017-07-14 11:15:03', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(9, 1, '32840000000', '2017-07-14', '1499997297100', '2017-07-14 11:24:57', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(10, 1, '32840000000', '2017-07-14', '1499997324424', '2017-07-14 11:25:24', '2017-07-14 11:25:53', '29.015', '2017-07-14 11:25:57', 1),
+(11, 1, '32840000000', '2017-07-14', '1499999889661', '2017-07-14 12:08:09', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(12, 0, '', '2017-07-14', '1500006941350', '2017-07-14 14:05:41', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(13, 5, '32840000004', '2017-07-14', '1500009708361', '2017-07-14 14:51:48', '2017-07-14 14:54:55', '187.384', '2017-07-14 14:58:16', 2),
+(14, 1, '32840000000', '2017-07-14', '1500010189559', '2017-07-14 14:59:49', '2017-07-14 15:00:06', '17.345', '2017-07-14 15:00:10', 1),
+(15, 5, '32840000004', '2017-07-14', '1500010230425', '2017-07-14 15:00:30', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(16, 5, '32840000004', '2017-07-14', '1500010244329', '2017-07-14 15:00:44', '2017-07-14 15:01:07', '23.501', '2017-07-14 15:01:13', 1),
+(17, 1, '32840000000', '2017-07-14', '1500010307041', '2017-07-14 15:01:47', '2017-07-14 15:02:01', '14.884', '2017-07-14 15:02:10', 1),
+(18, 1, '32840000000', '2017-07-14', '1500010428040', '2017-07-14 15:03:48', '2017-07-14 15:04:00', '12.748', '2017-07-14 15:04:06', 1),
+(19, 1, '32840000000', '2017-07-14', '1500010480793', '2017-07-14 15:04:40', '2017-07-14 15:04:52', '11.58', '2017-07-14 15:05:09', 1),
+(20, 1, '32840000000', '2017-07-14', '1500010527831', '2017-07-14 15:05:27', '2017-07-14 15:05:40', '12.69', '2017-07-14 15:05:45', 1),
+(21, 1, '32840000000', '2017-07-14', '1500010628267', '2017-07-14 15:07:08', '2017-07-14 15:07:23', '15.426', '2017-07-14 15:08:16', 1),
+(22, 1, '32840000000', '2017-07-14', '1500010716328', '2017-07-14 15:08:36', '2017-07-14 15:08:54', '18.265', '2017-07-14 15:09:13', 1),
+(23, 1, '32840000000', '2017-07-14', '1500010800407', '2017-07-14 15:10:00', '2017-07-14 15:10:21', '21.363', '2017-07-14 15:10:40', 1),
+(24, 1, '32840000000', '2017-07-14', '1500012418162', '2017-07-14 15:36:58', '2017-07-14 15:37:21', '23.265', '2017-07-14 15:37:28', 1),
+(25, 5, '32840000004', '2017-07-14', '1500013975185', '2017-07-14 16:02:55', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(26, 5, '32840000004', '2017-07-14', '1500014100215', '2017-07-14 16:05:00', '2017-07-14 16:05:45', '45.543', '0000-00-00 00:00:00', 2),
+(27, 5, '32840000004', '2017-07-14', '1500014172023', '2017-07-14 16:06:12', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(28, 5, '32840000004', '2017-07-14', '1500014199280', '2017-07-14 16:06:39', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(29, 5, '32840000004', '2017-07-14', '1500014299478', '2017-07-14 16:08:19', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(30, 1, '32840000000', '2017-07-15', '1500062555937', '2017-07-15 05:32:35', '2017-07-15 05:37:55', '319.931', '2017-07-15 05:38:48', 2),
+(31, 1, '32840000000', '2017-07-15', '1500062984500', '2017-07-15 05:39:44', '2017-07-15 05:40:30', '46.101', '2017-07-15 05:41:24', 1),
+(32, 1, '32840000000', '2017-07-15', '1500063157072', '2017-07-15 05:42:37', '2017-07-15 05:42:45', '8.923', '2017-07-15 05:43:07', 1),
+(33, 1, '32840000000', '2017-07-15', '1500063298424', '2017-07-15 05:44:58', '2017-07-15 05:45:05', '6.782', '2017-07-15 05:45:31', 1),
+(34, 1, '32840000000', '2017-07-15', '1500063485426', '2017-07-15 05:48:05', '2017-07-15 05:48:14', '8.596', '2017-07-15 05:48:25', 1),
+(35, 1, '32840000000', '2017-07-15', '1500064498046', '2017-07-15 06:04:58', '2017-07-15 06:05:09', '11.139', '2017-07-15 06:05:19', 1),
+(36, 1, '32840000000', '2017-07-15', '1500064752720', '2017-07-15 06:09:12', '2017-07-15 06:09:25', '13.204', '2017-07-15 06:09:35', 1),
+(37, 1, '32840000000', '2017-07-15', '1500064856533', '2017-07-15 06:10:56', '2017-07-15 06:11:06', '10.297', '2017-07-15 06:11:15', 1),
+(38, 1, '32840000000', '2017-07-15', '1500065204967', '2017-07-15 06:16:44', '2017-07-15 06:16:53', '8.825', '2017-07-15 06:17:05', 1),
+(39, 1, '32840000000', '2017-07-15', '1500065343579', '2017-07-15 06:19:03', '2017-07-15 06:19:25', '22.243', '2017-07-15 06:19:38', 2),
+(40, 1, '32840000000', '2017-07-15', '1500065398402', '2017-07-15 06:19:58', '2017-07-15 06:20:07', '9.47', '2017-07-15 06:20:12', 1),
+(41, 1, '32840000000', '2017-07-15', '1500065630554', '2017-07-15 06:23:50', '2017-07-15 06:23:59', '9.043', '2017-07-15 06:25:53', 1),
+(42, 1, '32840000000', '2017-07-15', '1500066284328', '2017-07-15 06:34:44', '2017-07-15 06:34:58', '13.847', '2017-07-15 06:38:17', 1),
+(43, 1, '32840000000', '2017-07-15', '1500066688507', '2017-07-15 06:41:28', '2017-07-15 06:41:58', '30.123', '2017-07-15 06:42:03', 1),
+(44, 1, '32840000000', '2017-07-15', '1500066735552', '2017-07-15 06:42:15', '2017-07-15 06:42:25', '10.394', '2017-07-15 06:42:37', 1),
+(45, 1, '32840000000', '2017-07-15', '1500066780614', '2017-07-15 06:43:00', '2017-07-15 06:43:12', '11.849', '2017-07-15 06:48:55', 1),
+(46, 1, '32840000000', '2017-07-15', '1500067203181', '2017-07-15 06:50:03', '2017-07-15 06:50:14', '11.794', '2017-07-15 06:50:27', 1),
+(47, 1, '32840000000', '2017-07-15', '1500067270810', '2017-07-15 06:51:10', '2017-07-15 06:51:20', '9.485', '2017-07-15 06:52:27', 1),
+(48, 1, '32840000000', '2017-07-15', '1500067412117', '2017-07-15 06:53:32', '2017-07-15 06:53:40', '8.69', '2017-07-15 06:54:09', 1),
+(49, 1, '32840000000', '2017-07-15', '1500067463380', '2017-07-15 06:54:23', '2017-07-15 06:54:31', '8.604', '2017-07-15 06:54:38', 1),
+(50, 1, '32840000000', '2017-07-15', '1500067492094', '2017-07-15 06:54:52', '2017-07-15 06:55:03', '10.956', '2017-07-15 06:55:39', 1),
+(51, 1, '32840000000', '2017-07-15', '1500068430602', '2017-07-15 07:10:30', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(52, 1, '32840000000', '2017-07-15', '1500070271092', '2017-07-15 07:41:11', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(53, 1, '32840000000', '2017-07-15', '1500070539851', '2017-07-15 07:45:39', '2017-07-15 07:48:46', '186.749', '2017-07-15 08:13:29', 3),
+(54, 1, '32840000000', '2017-07-15', '1500073643326', '2017-07-15 08:37:23', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(55, 0, '', '2017-07-15', '1500075490954', '2017-07-15 09:08:10', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(56, 6, '32840000005', '2017-07-15', '1500076471196', '2017-07-15 09:24:31', '2017-07-15 09:24:44', '13.058', '2017-07-15 09:25:03', 1),
+(57, 6, '32840000005', '2017-07-15', '1500076519061', '2017-07-15 09:25:19', '2017-07-15 09:25:28', '9.628', '2017-07-15 09:25:55', 1),
+(58, 6, '32840000005', '2017-07-15', '1500076605001', '2017-07-15 09:26:45', '2017-07-15 09:26:54', '9.777', '2017-07-15 09:27:11', 1),
+(59, 6, '32840000005', '2017-07-15', '1500076647713', '2017-07-15 09:27:27', '2017-07-15 09:27:38', '10.516', '2017-07-15 09:27:53', 1),
+(60, 6, '32840000005', '2017-07-15', '1500076689977', '2017-07-15 09:28:09', '2017-07-15 09:28:17', '7.831', '2017-07-15 09:28:50', 1),
+(61, 6, '32840000005', '2017-07-15', '1500076824889', '2017-07-15 09:30:24', '2017-07-15 09:30:34', '10.022', '2017-07-15 09:30:51', 1),
+(62, 6, '32840000005', '2017-07-15', '1500076868266', '2017-07-15 09:31:08', '2017-07-15 09:32:26', '77.747', '2017-07-15 09:34:43', 1),
+(63, 6, '32840000005', '2017-07-15', '1500077099742', '2017-07-15 09:34:59', '2017-07-15 09:35:11', '11.774', '2017-07-15 09:35:15', 1),
+(64, 7, '32840000006', '2017-07-15', '1500115717808', '2017-07-15 20:18:37', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(65, 7, '32840000006', '2017-07-15', '1500116230429', '2017-07-15 20:27:10', '2017-07-15 20:27:20', '10.207', '2017-07-15 20:27:59', 1),
+(66, 7, '32840000006', '2017-07-15', '1500116329431', '2017-07-15 20:28:49', '2017-07-15 20:29:01', '12.186', '2017-07-15 20:30:44', 1),
+(67, 1, '32840000000', '2017-07-15', '1500119159846', '2017-07-15 21:15:59', '2017-07-15 21:16:30', '30.788', '2017-07-16 00:43:20', 2),
+(68, 6, '32840000005', '2017-07-15', '1500120244635', '2017-07-15 21:34:04', '2017-07-15 21:34:19', '14.608', '2017-07-15 21:34:23', 1),
+(69, 6, '32840000005', '2017-07-16', '1500207007389', '2017-07-16 21:40:07', '2017-07-16 21:41:41', '93.938', '2017-07-16 21:44:42', 3),
+(70, 7, '32840000006', '2017-07-16', '1500207345311', '2017-07-16 21:45:45', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(71, 7, '32840000006', '2017-07-16', '1500207656771', '2017-07-16 21:50:56', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(72, 8, '32840000007', '2017-07-17', '1500233748401', '2017-07-17 05:05:48', '2017-07-17 05:08:45', '177.308', '2017-07-17 05:09:18', 3),
+(73, 1, '32840000000', '2017-07-17', '1500239867327', '2017-07-17 06:47:47', '2017-07-17 06:47:59', '12.312', '0000-00-00 00:00:00', 1),
+(74, 1, '32840000000', '2017-07-17', '1500277170353', '2017-07-17 17:09:30', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(75, 1, '32840000000', '2017-07-17', '1500277198785', '2017-07-17 17:09:58', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(76, 1, '32840000000', '2017-07-17', '1500277222626', '2017-07-17 17:10:22', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', 0),
+(77, 1, '32840000000', '2017-07-17', '1500277442398', '2017-07-17 17:14:02', '2017-07-17 17:14:17', '15.535', '2017-07-17 17:15:38', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tmp`
+--
+
+CREATE TABLE `tmp` (
+  `Cust_Id` int(10) NOT NULL,
+  `Acc_no` varchar(12) NOT NULL,
+  `tmp_pwd` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tmp`
+--
+
+INSERT INTO `tmp` (`Cust_Id`, `Acc_no`, `tmp_pwd`) VALUES
+(1, '32840000000', 'ylQYxYmi'),
+(2, '32840000001', 'S9L4FE3L'),
+(3, '32840000002', 'WDg7jlyD'),
+(4, '32840000003', 'Hvsiinve'),
+(6, '32840000005', 'u6K3NBAe'),
+(7, '32840000006', 'O11NF3aP'),
+(8, '32840000007', 'S6QgUsaq');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userId` int(11) NOT NULL,
+  `Account_no` varchar(12) NOT NULL,
+  `userName` varchar(30) NOT NULL,
+  `Gender` enum('F','M') NOT NULL,
+  `DOB` date NOT NULL,
+  `Balance` int(12) DEFAULT NULL,
+  `Mobile` varchar(12) DEFAULT NULL,
+  `userEmail` varchar(60) NOT NULL,
+  `userPass` varchar(255) NOT NULL,
+  `img1` varchar(30) NOT NULL,
+  `img2` varchar(30) NOT NULL,
+  `img3` varchar(30) NOT NULL,
+  `img4` varchar(30) NOT NULL,
+  `cur_status` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `Account_no`, `userName`, `Gender`, `DOB`, `Balance`, `Mobile`, `userEmail`, `userPass`, `img1`, `img2`, `img3`, `img4`, `cur_status`) VALUES
+(1, '32840000000', 'Sumit Kumar Thakur', 'F', '2000-06-14', 51000, '09998273912', 'sumit@gmail.com', '53d526c5f593235681596e5c8d8db90c73b6c0698e37cdfbbea886be14bfdd0b', '14.jpg', '30.jpg', '50.jpg', '13.jpg', 0),
+(2, '32840000001', 'Shwetanshu', 'M', '1996-08-16', 121000, '09990150433', 'shwetu@gmail.com', '', '', '', '', '', 0),
+(3, '32840000002', 'Puneet Goyal', 'M', '1998-06-19', 46890, '09898767789', 'puneet@gmail.com', '', '', '', '', '', 0),
+(4, '32840000003', 'Joohi', 'F', '2017-07-22', 21000, '09853727879', 'joohi@gmail.com', '', '', '', '', '', 0),
+(6, '32840000005', 'Ashu', 'M', '2017-01-12', 111000, '09990150433', 'ashu@gmail.com', '24840fe53de0f49b26505054e21273132a8363074adf3576d4bc6a5e51a3a876', '23.jpg', '13.jpg', '50.jpg', '16.jpg', 0),
+(7, '32840000006', 'IIT', 'M', '1990-03-15', 5000, '07843013522', 'IIT@GMAIL.COM', '484d66c3d2024c96825d1de28894d805c46ec6914a30387eabae04debfb04c2a', '15.jpg', '13.jpg', '50.jpg', '25.jpg', 0),
+(8, '32840000007', 'Shwetu', 'M', '2017-07-04', 5000, '09990150433', 'shwetu.rohatgi@gmail.com', 'dd8a1008f1b867131a18aa10184e9562ac0e56b82b9462db49c427a06cede4ce', '11.jpg', '38.jpg', '47.jpg', '23.jpg', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `32840000000`
+--
+ALTER TABLE `32840000000`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000001`
+--
+ALTER TABLE `32840000001`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000002`
+--
+ALTER TABLE `32840000002`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000003`
+--
+ALTER TABLE `32840000003`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000004`
+--
+ALTER TABLE `32840000004`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000005`
+--
+ALTER TABLE `32840000005`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000006`
+--
+ALTER TABLE `32840000006`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `32840000007`
+--
+ALTER TABLE `32840000007`
+  ADD PRIMARY KEY (`transactionid`);
+
+--
+-- Indexes for table `attempts`
+--
+ALTER TABLE `attempts`
+  ADD PRIMARY KEY (`sl_no`),
+  ADD UNIQUE KEY `userId` (`userId`);
+
+--
+-- Indexes for table `beneficiary1`
+--
+ALTER TABLE `beneficiary1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`sl_no`);
+
+--
+-- Indexes for table `tmp`
+--
+ALTER TABLE `tmp`
+  ADD UNIQUE KEY `Acc_no` (`Acc_no`),
+  ADD KEY `Cust_Id` (`Cust_Id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userId`),
+  ADD UNIQUE KEY `userEmail` (`userEmail`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `32840000000`
+--
+ALTER TABLE `32840000000`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `32840000001`
+--
+ALTER TABLE `32840000001`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `32840000002`
+--
+ALTER TABLE `32840000002`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `32840000003`
+--
+ALTER TABLE `32840000003`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `32840000004`
+--
+ALTER TABLE `32840000004`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `32840000005`
+--
+ALTER TABLE `32840000005`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `32840000006`
+--
+ALTER TABLE `32840000006`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `32840000007`
+--
+ALTER TABLE `32840000007`
+  MODIFY `transactionid` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `attempts`
+--
+ALTER TABLE `attempts`
+  MODIFY `sl_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `beneficiary1`
+--
+ALTER TABLE `beneficiary1`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `sl_no` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+--
+-- AUTO_INCREMENT for table `tmp`
+--
+ALTER TABLE `tmp`
+  MODIFY `Cust_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -4,6 +4,7 @@ session_start();
 
 $adminid = array("12345001","12345002","12345003","12345004");
 $adminpwd = array("abc123","def456","ghi789","xyz123");
+
 if( isset($_POST['admin-btn-login']) ) {
 
     $flag = 0;
@@ -17,7 +18,7 @@ if( isset($_POST['admin-btn-login']) ) {
 	}
 	}
 	if($flag==0){
-		echo "Invalid credentials, Try again !";
+		echo '<div class="warning">Invalid credentials, Try again !</div>';
 	}
 }
 
